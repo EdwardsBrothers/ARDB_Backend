@@ -1,0 +1,101 @@
+
+          M A R I E T T A    D R A P E R Y                  PAGE   1
+                        ORDERS STILL IN CREDIT 11/03/2015   6:42 PM
+
+CUT #        CUSTOMER  NAME      CUST ID  TYPE    QTY   STAT     ORD/REL DT
+
+
+ 029192    CEDAR CREEK APTS.     109051   CSTM                    9/30/2015
+           BV-S6W        0.0 X   0.0                4    027        9/30/2015
+
+ 031622    CHEROKEE BEND APTS.   113468   CSTM                   10/30/2015
+           B-WN         31.0 X  72.0                4    027       10/30/2015
+           B-WN         23.0 X  64.0                3    027
+
+ 031659    WELLINGTON MANOR      114120   CSTM                   10/30/2015
+           B-FN         71.0 X  60.0                8    027       10/30/2015
+           B-FN         71.0 X  48.0                6    027
+           B-FN         35.0 X  36.0                4    027
+
+ 031420    PLANTATION CLUB       122295   CSTM                   10/28/2015
+           B-2W         63.2 X  60.0                1    027       10/28/2015
+           B-2W         31.0 X  60.0                1    027
+
+ 030075    HUNTERS RIDGE         131696   CSTM                   10/12/2015
+           B-WN         35.0 X  60.0               10    027       10/12/2015
+           B-WN         47.0 X  60.0               10    027
+           BV-S6W        0.0 X   0.0                2    027
+
+ 031392    ROSEWOOD PARK APTS    134132   CSTM                   10/28/2015
+           B-FN         63.0 X  72.0                8    027       10/28/2015
+           B-FN         55.0 X  72.0                2    027
+           B-FN         39.0 X  72.0                6    027
+           B-FN         27.0 X  72.0                4    027
+
+ 031426    HIGHLAND SQUARE       134871   CSTM                   10/28/2015
+           BCW          43.0 X  53.0                1    026       10/28/2015
+
+ 031414    STANFORD REMODELERS   135974   CSTM                   10/28/2015
+           B-WN         57.4 X  84.0                1    026       10/28/2015
+
+ 030557    MONTANA STATE UNIV.   136938   CSTM                   10/19/2015
+           B-FW         71.2 X  64.0               16    027       10/19/2015
+
+ 030610    MONTANA STATE UNIV.   136938   CSTM                   10/19/2015
+           B-FW         58.2 X  48.0                8    027       10/19/2015
+
+ 031087    MONTANA STATE UNIV.   136938   CSTM                   10/23/2015
+           B-FW         45.4 X  41.0               16    027       10/23/2015
+
+ 031460    MARQUIS@MOUNT ZION    141931   CSTM                   10/28/2015
+           B-WN         63.0 X  60.0               12    027       10/28/2015
+
+ 030046    DUNWOODY VILLAGE      142521   CSTM                   10/12/2015
+           B-FW         54.4 X  72.0               20    027       10/12/2015
+
+ 031513    BROOKSIDE APTS.       143060   CSTM                   10/29/2015
+           BEB          53.4 X  98.0                4    027       10/29/2015
+
+ 030106    6 NORTH APTS          143117   CSTM                   10/12/2015
+           BEB          31.0 X  84.0                1    027       10/12/2015
+
+ 027382    CHAMBREL AT ROSWELL   143399   CSTM                    9/08/2015
+           B-2W         69.2 X  60.0                3    027        9/08/2015
+           B-2W         24.4 X  69.0                1    027
+          M A R I E T T A    D R A P E R Y                  PAGE   2
+                        ORDERS STILL IN CREDIT 11/03/2015   6:42 PM
+
+CUT #        CUSTOMER  NAME      CUST ID  TYPE    QTY   STAT     ORD/REL DT
+
+
+ 031487    EDWARDS HARDWARE      143515   CSTM                   10/30/2015
+           B-2W         30.0 X  76.0                3    027       10/30/2015
+           B-2W         30.6 X  76.0                2    027
+           B-2W         34.0 X  76.0                1    027
+           B-2W         38.6 X  76.0                1    027
+           B-2W         38.4 X  76.0                1    027
+
+ 030807    VILLAGES AT           143628   CSTM                   11/02/2015
+           B-WN         35.0 X  72.0               30    027       11/02/2015
+           B-WN         29.0 X  72.0               18    027
+
+ 031156    ORCHARD LANE APTS     143807   CSTM                   10/26/2015
+           B-WN         31.0 X  72.0                8    027       10/26/2015
+           B-WN         39.0 X  72.0                6    027
+           B-WN         63.0 X  72.0                6    027
+           B-WN         55.0 X  72.0                6    027
+
+ 030857    CAROLINA APTS         145114   CSTM                   10/21/2015
+           B-WN         70.0 X  60.0                4    027       10/21/2015
+
+ 031508    GREENWYCKE            145814   CSTM                   10/29/2015
+           B-AN         35.0 X  36.0                3    027       10/29/2015
+           B-AN         35.0 X  48.0                2    027
+           B-AN         47.0 X  48.0                1    027
+
+ 031714    MIRAGE BAY            145907   CSTM                   11/02/2015
+           BV-P         35.0 X  60.4               44    026       11/02/2015
+           BV-P         22.0 X  22.4               52    026
+           BV-P         72.2 X  60.4                8    026
+           BV-P        109.0 X  60.4                8    026
+           BV-S8W        0.0 X   0.0               11    026
