@@ -1,11 +1,10 @@
 package be_gui;
 
-import javax.swing.JPanel;
-
 import java.awt.CardLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
 
 public class BE_GUI_ManagerPanel extends JPanel {
 	

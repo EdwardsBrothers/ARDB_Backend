@@ -1,14 +1,15 @@
 package be_gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Dimension;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
 
 public class MenuPanel extends JPanel {
 

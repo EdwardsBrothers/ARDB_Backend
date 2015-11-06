@@ -3,8 +3,6 @@ package be_gui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.Component;
-import java.awt.Rectangle;
 
 public class BE_GUI {
 

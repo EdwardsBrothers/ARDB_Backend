@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.border.MatteBorder;
 
 public class ServicePanel extends JPanel {

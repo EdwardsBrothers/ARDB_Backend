@@ -1,22 +1,15 @@
 package be_gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.Timer;
-
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
-import javax.swing.SwingConstants;
-
-import java.awt.Component;
-
 import javax.swing.JButton;
-
-import java.awt.Dimension;
-
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
 import javax.swing.border.MatteBorder;
-
-import java.awt.Color;
 
 
 public abstract class ServicePanelInd extends JPanel {
