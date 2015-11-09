@@ -19,12 +19,12 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class FileEmailer {
-	
+
 	private String senderName, senderEmail, senderPassword, emailHost, smtpAuth, smtpTLS;;
-	private int smtpPort;	
+	private int smtpPort;
 	private Properties props;
-	
-	public FileEmailer(){
+
+	public FileEmailer() {
 		senderName = "Billing Services";
 		senderEmail = "ar@mariettadrapery.com";
 		senderPassword = "K@thy2222";
@@ -32,64 +32,74 @@ public class FileEmailer {
 		smtpPort = 25;
 		smtpAuth = "true";
 		smtpTLS = "false";
-		
+
 		setProperties();
 	}
-	
-	public FileEmailer(String senderName, String senderEmail, String senderPassword, String emailHost, int smtpPort, boolean smtpAuth, boolean smtpTLS){
+
+	public FileEmailer(String senderName, String senderEmail, String senderPassword, String emailHost, int smtpPort,
+			boolean smtpAuth, boolean smtpTLS) {
 		this.senderName = senderName;
 		this.senderEmail = senderEmail;
 		this.senderPassword = senderPassword;
 		this.emailHost = emailHost;
 		this.smtpPort = smtpPort;
-		if(smtpAuth){ this.smtpAuth = "true";} else { this.smtpAuth = "false"; }
-		if(smtpTLS){ this.smtpTLS = "true";} else {this.smtpTLS = "false";}
-		
+		if (smtpAuth) {
+			this.smtpAuth = "true";
+		} else {
+			this.smtpAuth = "false";
+		}
+		if (smtpTLS) {
+			this.smtpTLS = "true";
+		} else {
+			this.smtpTLS = "false";
+		}
+
 		setProperties();
 	}
-	
-	private void setProperties(){
+
+	private void setProperties() {
 		props = System.getProperties();
 		props.setProperty("mail.smtp.auth", smtpAuth);
-		//props.setProperty("mail.smtp.starttls.enable", smtpTLS);
+		// props.setProperty("mail.smtp.starttls.enable", smtpTLS);
 		props.setProperty("mail.smtp.host", emailHost);
-		props.setProperty("mail.smtp.port", Integer.toString(smtpPort));		
+		props.setProperty("mail.smtp.port", Integer.toString(smtpPort));
 	}
-	
-	private Session createSession(){
-				Session session = Session.getInstance(props, new javax.mail.Authenticator(){
+
+	private Session createSession() {
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(senderEmail, senderPassword);
-				}
-			});
-			return session;
+			}
+		});
+		return session;
 	}
-	
-	public boolean sendTextEmail(String recipientEmail, String subject, String text){
-		
+
+	public boolean sendTextEmail(String recipientEmail, String subject, String text) {
+
 		Session session = createSession();
-				
-		try{
+
+		try {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(senderEmail));
-			message.addRecipient(Message.RecipientType.TO,new InternetAddress(recipientEmail));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
 			message.setSubject(subject);
-			message.setContent(text,"text/plain");
+			message.setContent(text, "text/plain");
 			message.setSentDate(new Date());
 			Transport.send(message);
-			return true;			
-		} catch(MessagingException mex){
+			return true;
+		} catch (MessagingException mex) {
 			mex.printStackTrace();
 			return false;
 		}
 	}
 
-	public boolean sendEmailWithAttachment(String recipientEmail, String subject, String text, String fileLocation, String fileName){
-		
+	public boolean sendEmailWithAttachment(String recipientEmail, String subject, String text, String fileLocation,
+			String fileName) {
+
 		Session session = createSession();
-		
-		try{
+
+		try {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(senderEmail));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
@@ -105,21 +115,21 @@ public class FileEmailer {
 			multipart.addBodyPart(messageBodyPart);
 			message.setContent(multipart);
 			message.setSentDate(new Date());
-			Transport.send(message);	
-			
+			Transport.send(message);
+
 			return true;
-		} catch (MessagingException mex){
+		} catch (MessagingException mex) {
 			mex.printStackTrace();
 			return false;
 		}
 
 	}
-	
-	public boolean sendEmailWithAttachment(String recipientEmail, String subject, String text, String[][] files){
-		
+
+	public boolean sendEmailWithAttachment(String recipientEmail, String subject, String text, String[][] files) {
+
 		Session session = createSession();
-		
-		try{
+
+		try {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(senderEmail));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
@@ -128,28 +138,60 @@ public class FileEmailer {
 			messageBodyPart.setText(text);
 			Multipart multipart = new MimeMultipart();
 			multipart.addBodyPart(messageBodyPart);
-			
-			//file location i,0 fileName i,1
-			for (int i = 0; i < files.length; i++){
+
+			// file location i,0 fileName i,1
+			for (int i = 0; i < files.length; i++) {
 				messageBodyPart = new MimeBodyPart();
 				DataSource source = new FileDataSource(files[i][0]);
 				messageBodyPart.setDataHandler(new DataHandler(source));
 				messageBodyPart.setFileName(files[i][1]);
 				multipart.addBodyPart(messageBodyPart);
 			}
-			
+
 			message.setContent(multipart);
-			Transport.send(message);	
-			
+			message.setSentDate(new Date());
+			Transport.send(message);
+
 			return true;
-		} catch (MessagingException mex){
+		} catch (MessagingException mex) {
 			mex.printStackTrace();
 			return false;
 		}
-		
-		
-		
-		
-		
+	}
+
+	public boolean sendEmailWithAttachment(String recipientEmail, String ccEmail, String subject, String text,
+			String[][] files) {
+
+		Session session = createSession();
+
+		try {
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(senderEmail));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
+			message.addRecipient(Message.RecipientType.CC, new InternetAddress(ccEmail));
+			message.setSubject(subject);
+			BodyPart messageBodyPart = new MimeBodyPart();
+			messageBodyPart.setText(text);
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+
+			// file location i,0 fileName i,1
+			for (int i = 0; i < files.length; i++) {
+				messageBodyPart = new MimeBodyPart();
+				DataSource source = new FileDataSource(files[i][0]);
+				messageBodyPart.setDataHandler(new DataHandler(source));
+				messageBodyPart.setFileName(files[i][1]);
+				multipart.addBodyPart(messageBodyPart);
+			}
+
+			message.setContent(multipart);
+			message.setSentDate(new Date());
+			Transport.send(message);
+
+			return true;
+		} catch (MessagingException mex) {
+			mex.printStackTrace();
+			return false;
+		}
 	}
 }

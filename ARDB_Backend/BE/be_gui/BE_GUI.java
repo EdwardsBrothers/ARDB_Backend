@@ -13,6 +13,7 @@ public class BE_GUI {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					BE_GUI window = new BE_GUI();
