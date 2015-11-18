@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="C:/Users/jedwards.MMO/git/ARDB_Backend/ARDB_Backend/pdfbox-app-2.0.0-RC1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/jedwards.MMO/git/ARDB_Backend/ARDB_Backend/preflight-app-2.0.0-RC1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/jedwards.MMO/git/ARDB_Backend/ARDB_Backend/jaf-1_1_1.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

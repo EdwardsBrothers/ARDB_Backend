@@ -33,7 +33,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		timer = new Timer(27777, il);
 		invGen = new InvoiceGenerator();
 		
-		invoiceFilePath = "Z:\\CCINV";
+		//invoiceFilePath = "Z:\\CCINV";
 		currentInvoiceFile = new File(invoiceFilePath);
 		currentInvoiceTimeStamp = currentInvoiceFile.lastModified();
 		

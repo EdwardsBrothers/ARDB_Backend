@@ -30,8 +30,8 @@ public class ServicePanel extends JPanel {
 		cutHandler = new CutHandler();
 		add(cutHandler);
 
-		invoiceHandler = new InvoiceHandler();
-		add(invoiceHandler);
+		//invoiceHandler = new InvoiceHandler();
+		//add(invoiceHandler);
 
 		creditReportEmailer = new CreditReportEmailer();
 		add(creditReportEmailer);
