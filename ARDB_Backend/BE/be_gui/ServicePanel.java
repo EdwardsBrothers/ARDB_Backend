@@ -11,8 +11,12 @@ public class ServicePanel extends JPanel {
 	private EditHandler editHandler;
 	private CutHandler cutHandler;
 	private InvoiceHandler invoiceHandler;
+	private GoldmarkHandler goldmarkHandler;
+	private ESupplyHandler eSupplyHandler;
 	private CreditReportEmailer creditReportEmailer;
 	private ItemHistoryHandler itemHistoryHandler;
+	
+	
 
 	/**
 	 * Create the panel.
@@ -32,6 +36,12 @@ public class ServicePanel extends JPanel {
 
 		//invoiceHandler = new InvoiceHandler();
 		//add(invoiceHandler);
+		
+		goldmarkHandler = new GoldmarkHandler();
+		add(goldmarkHandler);
+		
+		eSupplyHandler = new ESupplyHandler();
+		add(eSupplyHandler);
 
 		creditReportEmailer = new CreditReportEmailer();
 		add(creditReportEmailer);

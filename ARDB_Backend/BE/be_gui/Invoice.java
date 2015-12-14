@@ -140,7 +140,13 @@ public class Invoice {
 				}
 			lineNumber++;		
 		}
+		scan.close();
 	}
+	
+	public Invoice(String invoice, boolean valid){
+		
+	}
+	
 
 	public boolean isElectronic() {
 		return sendElectronically;

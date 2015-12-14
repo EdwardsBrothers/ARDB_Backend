@@ -50,6 +50,7 @@ public class InvoiceHandler extends ServicePanelInd {
 			Scanner scan = new Scanner(file);
 			scan.useDelimiter("BEGIN");
 			if(!scan.hasNext()){
+				scan.close();
 				return false;
 			}
 			scan.next();
@@ -62,7 +63,7 @@ public class InvoiceHandler extends ServicePanelInd {
 			}
 			
 			processElectronicInvoices(electronic);
-					
+			scan.close();		
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

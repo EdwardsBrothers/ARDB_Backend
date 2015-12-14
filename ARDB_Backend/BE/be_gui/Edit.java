@@ -190,7 +190,6 @@ public class Edit {
 			}
 			lineNumber++;
 		}
-		scan.close();
 	}
 
 	public boolean inCredit() {

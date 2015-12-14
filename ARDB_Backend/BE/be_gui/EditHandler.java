@@ -63,7 +63,6 @@ public class EditHandler extends ServicePanelInd {
 					changeOrder.add(e);
 				}
 			}
-			scan.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("Edit Init Read Fail");
