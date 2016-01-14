@@ -14,13 +14,14 @@ import javax.swing.border.MatteBorder;
 public abstract class ServicePanelInd extends JPanel {
 
 	protected JLabel lblServiceName, lblStatus, lblLastUpdate;
-	protected JButton btnStart, btnStop;
+	protected JButton btnStart, btnStop, btnPing;
 	protected Timer timer;
 
 	/**
 	 * Create the panel.
 	 */
 	public ServicePanelInd(String serviceName) {
+			
 		setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
 		setPreferredSize(new Dimension(600, 30));
 		FlowLayout flowLayout = (FlowLayout) getLayout();
@@ -46,9 +47,13 @@ public abstract class ServicePanelInd extends JPanel {
 		btnStart.setPreferredSize(new Dimension(75, 25));
 		add(btnStart);
 
-		btnStop = new JButton("Stop");
-		btnStop.setPreferredSize(new Dimension(75, 25));
-		add(btnStop);
+		//btnStop = new JButton("Stop");
+		//btnStop.setPreferredSize(new Dimension(75, 25));
+		//add(btnStop);
+		
+		btnPing = new JButton("Ping");
+		btnPing.setPreferredSize(new Dimension(75,25));
+		add(btnPing);
 
 	}
 

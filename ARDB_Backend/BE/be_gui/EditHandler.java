@@ -2,6 +2,10 @@ package be_gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.print.PageFormat;
+import java.awt.print.Paper;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -10,7 +14,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.swing.JPanel;
 import javax.swing.Timer;
+
+
+
+
+
 
 import utilities.FileEmailer;
 
@@ -21,10 +31,13 @@ public class EditHandler extends ServicePanelInd {
 	private long currentEditTimeStamp;
 	private FileEmailer editEmailer;
 	private SimpleDateFormat sdf;
+	
 	private EditListener el;
+	private Pinger ping;
 
 	public EditHandler() {
 		super("Edits");
+	
 		sdf = new SimpleDateFormat("MM-dd-yy kk:mm");
 		editEmailer = new FileEmailer();
 		el = new EditListener();
@@ -37,6 +50,10 @@ public class EditHandler extends ServicePanelInd {
 		timer.start();
 		lblStatus.setText("Running");
 		lblLastUpdate.setText(sdf.format(new Date()));
+		
+		ping = new Pinger();
+		btnPing.addActionListener(ping);
+
 
 	}
 
@@ -63,6 +80,7 @@ public class EditHandler extends ServicePanelInd {
 					changeOrder.add(e);
 				}
 			}
+			scan.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("Edit Init Read Fail");
@@ -146,6 +164,63 @@ public class EditHandler extends ServicePanelInd {
 		}
 
 		editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
+		
+		printEdits(all);
+		
+		checkESupply(all);
+	}
+	
+	private void printEdits(ArrayList<Edit> all){
+		
+		PrinterJob pj = PrinterJob.getPrinterJob();
+		PageFormat pf = pj.defaultPage();
+		Paper paper = new Paper();
+		paper.setSize(8.5*72, 11*72);
+		double margin = 32;
+		paper.setImageableArea(margin, margin, paper.getWidth() - (2 * margin), paper.getHeight() - (2 * margin));
+				
+		pf.setPaper(paper);
+		for (Edit e : all){
+			pj.setPrintable(e,  pf);
+			try{
+				pj.print();
+			} catch (PrinterException ex){
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	private void checkESupply(ArrayList<Edit> all) {
+		
+		
+	}
+	
+	private void connectDB(){
+		/**try{
+			String dbConnect = "jdbc:sqlserver://192.168.0.180:1433;databaseName=Invoices;user=MMO\\Administrator;pasword=Mar13tta22";
+			Connection con = null;
+			Statement stmt = null;
+			ResultSet rs = null;
+			//
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			con = DriverManager.getConnection(dbConnect);
+			System.out.println("connected");
+			String qs = "Select * FROM ESUPPLY";
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(qs);
+			
+			while(rs.next()){
+				System.out.println(rs.getString(1));
+			}
+			
+			
+			
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		**/
 	}
 
 	private File createEditFile(ArrayList<Edit> editList, String name) {
@@ -182,6 +257,18 @@ public class EditHandler extends ServicePanelInd {
 
 		}
 
+	}
+	
+	private class Pinger implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getSource().equals(btnPing)){
+				parseEdits(currentEditFile);
+			}
+		}
+		
 	}
 
 }

@@ -1,10 +1,20 @@
 package be_gui;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Edit {
+import javax.swing.text.JTextComponent;
+
+public class Edit implements Printable{
 
 	private int cutNumber;
 	private Date orderDate;
@@ -15,6 +25,8 @@ public class Edit {
 	private ArrayList<String> lineItems;
 	private boolean inCredit, creditCard, orderChange;
 	private String editText;
+	
+	private int cutoff = 52;
 
 	public Edit(String editText) {
 		this.editText = editText;
@@ -190,6 +202,7 @@ public class Edit {
 			}
 			lineNumber++;
 		}
+		scan.close();
 	}
 
 	public boolean inCredit() {
@@ -235,5 +248,48 @@ public class Edit {
 	public void setBillOne(String billOne) {
 		this.billOne = billOne;
 	}
+
+	@Override
+	public int print(Graphics g, PageFormat pf, int i)
+			throws PrinterException {
+		String[] lines = editText.split("\n");
+		
+		Font font = new Font("Lucida Sans Typewriter", Font.PLAIN, 10);
+		FontMetrics metrics = g.getFontMetrics(font);
+		int lineHeight = metrics.getHeight();
+		double pageHeight = pf.getImageableHeight();
+		int linesPerPage = ((int)pageHeight/lineHeight);
+		int numBreaks = (lines.length-1)/linesPerPage;
+		int[] pageBreaks = new int[numBreaks];
+		for(int b = 0; b < numBreaks; b++){
+			pageBreaks[b] = (b+1)*linesPerPage;
+		}
+		
+		if(i > pageBreaks.length){
+			return NO_SUCH_PAGE;
+		}
+		
+		Graphics2D g2 = (Graphics2D) g;
+		g2.translate(pf.getImageableX(), pf.getImageableY());
+		g2.setFont(font);
+		g2.setPaint(Color.black);
+		
+		
+
+		
+		int y = 0;
+		int start = (i == 0) ? 0 : pageBreaks[i-1];
+		int end = (i == pageBreaks.length) ? lines.length : pageBreaks[i];
+		
+		for(int line = start;  line < end ; line++){
+			y += lineHeight;
+			g2.drawString(lines[line],0,y);
+		}
+		
+		return PAGE_EXISTS;
+	}
+
+
+
 
 }
