@@ -10,7 +10,7 @@ import javax.swing.Timer;
 
 import utilities.FileEmailer;
 
-class CreditReportEmailer extends ServicePanelInd {
+class NightlyReportEmailer extends ServicePanelInd {
 	/*
 	 * 
 	 */
@@ -22,7 +22,7 @@ class CreditReportEmailer extends ServicePanelInd {
 	private SimpleDateFormat sdf, statusSdf;
 	private CreditReportListener crl;
 
-	public CreditReportEmailer() {
+	public NightlyReportEmailer() {
 		super("Credit Report Emailer");
 		sdf = new SimpleDateFormat("MM-dd-yy");
 		statusSdf = new SimpleDateFormat("MM-dd-yy kk:mm");
@@ -63,6 +63,14 @@ class CreditReportEmailer extends ServicePanelInd {
 						"Hold List " + sdf.format(new Date()), "", attachmentFiles); // UPDATE!
 
 				lblLastUpdate.setText(statusSdf.format(new Date()));
+				
+				
+				//Send new/inactive
+				creditReportFileEmailer.sendEmailWithAttachment("igarcia@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
+						"Z:\\PRINT-DYINAC", "NEW AND INACTIVES " + sdf.format(new Date()) + ".txt");
+				
+				creditReportFileEmailer.sendEmailWithAttachment("tpaige@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
+						"Z:\\PRINT-DYINAC", "NEW AND INACTIVES " + sdf.format(new Date()) + ".txt");
 			}
 
 		}

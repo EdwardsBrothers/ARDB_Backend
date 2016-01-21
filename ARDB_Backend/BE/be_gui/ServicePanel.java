@@ -13,7 +13,7 @@ public class ServicePanel extends JPanel {
 	private InvoiceHandler invoiceHandler;
 	private GoldmarkHandler goldmarkHandler;
 	private ESupplyHandler eSupplyHandler;
-	private CreditReportEmailer creditReportEmailer;
+	private NightlyReportEmailer nightlyReportEmailer;
 	private ItemHistoryHandler itemHistoryHandler;
 	
 	
@@ -43,8 +43,8 @@ public class ServicePanel extends JPanel {
 		eSupplyHandler = new ESupplyHandler();
 		add(eSupplyHandler);
 
-		creditReportEmailer = new CreditReportEmailer();
-		add(creditReportEmailer);
+		nightlyReportEmailer = new NightlyReportEmailer();
+		add(nightlyReportEmailer);
 
 		itemHistoryHandler = new ItemHistoryHandler();
 		add(itemHistoryHandler);

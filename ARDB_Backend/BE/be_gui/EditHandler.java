@@ -9,6 +9,10 @@ import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +20,11 @@ import java.util.Scanner;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+
+
+
+
 
 
 
@@ -167,7 +176,7 @@ public class EditHandler extends ServicePanelInd {
 		
 		printEdits(all);
 		
-		checkESupply(all);
+		//checkESupply(all);
 	}
 	
 	private void printEdits(ArrayList<Edit> all){
@@ -191,27 +200,56 @@ public class EditHandler extends ServicePanelInd {
 	}
 
 	private void checkESupply(ArrayList<Edit> all) {
+		ArrayList<Edit> es = new ArrayList<Edit>();
 		
+		for(Edit e : all){
+			if(e.getManagementCo().equals("ES")){
+				es.add(e);
+			}
+		}
+		updateDB(es);
 		
 	}
 	
-	private void connectDB(){
-		/**try{
-			String dbConnect = "jdbc:sqlserver://192.168.0.180:1433;databaseName=Invoices;user=MMO\\Administrator;pasword=Mar13tta22";
+	private void updateDB(ArrayList<Edit> es){
+		
+		// MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, INVOICE_NUMBER, INVOICE_DATE, SHIP_DATE,
+		// PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE
+		
+		try{
+			String dbConnect = "jdbc:mysql://10.36.40.250:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
 			Connection con = null;
 			Statement stmt = null;
 			ResultSet rs = null;
 			//
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(dbConnect);
 			System.out.println("connected");
-			String qs = "Select * FROM ESUPPLY";
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(qs);
 			
-			while(rs.next()){
-				System.out.println(rs.getString(1));
+			
+			String qs = "";
+			for(Edit e : es){
+				qs = qs + "INSERT INTO orders (MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, "
+						+ "PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE) values (";
+			
+				String mgmt = e.getManagementCo();
+				String propAcc = e.getCustomerID();
+				String propName = e.getShipOne();
+				String add = e.getShipStreet();
+				String city = e.getShipCity();
+				String state = e.getShipState();
+				String zip = e.getShipZip();
+				int ordNum = e.getCutNumber();
+				String poNum = e.getPo();
+				Date orderDate = e.getOrderDate();
+				
+				qs = qs + mgmt + ", " + propAcc + ", " + propName + ", " + add + ", " + city + ", " + state + ", " + zip + 
+						", " + ordNum + ", " + poNum + ", " + orderDate + ", ";
+				String base = qs;
+
 			}
+			
+		
 			
 			
 			
@@ -220,7 +258,7 @@ public class EditHandler extends ServicePanelInd {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		**/
+
 	}
 
 	private File createEditFile(ArrayList<Edit> editList, String name) {

@@ -23,10 +23,12 @@ public class Edit implements Printable{
 	private String shipOne, shipTwo, shipThree, shipFour;
 	private float taxable, nonTaxable, tax, freight, labor, surcharge, misc, gross;
 	private ArrayList<String> lineItems;
+	private ArrayList<LineItem> liList;
 	private boolean inCredit, creditCard, orderChange;
 	private String editText;
 	
-	private int cutoff = 52;
+	private String billStreet, billCity, billState, billZip;
+	private String shipStreet, shipCity, shipState, shipZip;
 
 	public Edit(String editText) {
 		this.editText = editText;
@@ -203,6 +205,127 @@ public class Edit implements Printable{
 			lineNumber++;
 		}
 		scan.close();
+		
+		billStreet = ""; billCity = ""; billState = ""; billZip = ""; shipStreet = ""; shipCity = ""; shipState = ""; shipZip = "";
+		//parseAddress();
+		//parseLineItems();
+	}
+
+	private boolean parseLineItems(){
+		liList = new ArrayList<LineItem>();
+		for(String l : lineItems){
+			liList.add(new LineItem(l));
+		}
+		
+				
+		return true;
+	}
+
+	private boolean parseAddress(){
+		billStreet = billTwo.trim();
+		int commaInd = billThree.indexOf(",");
+		if(commaInd >= 0){
+			String preComma = billThree.substring(0,commaInd);
+			String postComma = billThree.substring(commaInd+1, billThree.length());
+			
+			billCity = preComma.trim();
+			for(int spaceLoopCounter = 0; spaceLoopCounter < postComma.length(); spaceLoopCounter++){
+				char c = postComma.charAt(spaceLoopCounter);
+				int i = (int) c;
+				if(i >= 65 && i <= 90){
+					billState = billState + c;
+				}
+				if(i >= 48 && i <= 57){
+					billZip = billZip + c;
+				}
+			}
+			for(int spaceLoopCounter = 0; spaceLoopCounter < billFour.length(); spaceLoopCounter++){
+				char c = billFour.charAt(spaceLoopCounter);
+				int i = (int) c;
+				if(i >= 65 && i <= 90){
+					billState = billState + c;
+				}
+				if(i >= 48 && i <= 57){
+					billZip = billZip + c;
+				}
+			}
+		}
+		else{
+			billStreet = billTwo.trim() + " " + billThree.trim();
+			commaInd = billFour.indexOf(",");
+			if(commaInd >=0){
+				String preComma = billFour.substring(0,commaInd);
+				String postComma = billFour.substring(commaInd+1, billFour.length());
+				
+				billCity = preComma.trim();
+				for(int spaceLoopCounter = 0; spaceLoopCounter < postComma.length(); spaceLoopCounter++){
+					char c = postComma.charAt(spaceLoopCounter);
+					int i = (int) c;
+					if(i >= 65 && i <= 90){
+						billState = billState + c;
+					}
+					if(i >= 48 && i <= 57){
+						billZip = billZip + c;
+					}
+				}
+			}
+			else{
+				//add error CATCH
+			}
+		}
+		
+		shipStreet = shipTwo.trim();
+		commaInd = shipThree.indexOf(",");
+		if(commaInd >= 0){
+			String preComma = shipThree.substring(0,commaInd);
+			String postComma = shipThree.substring(commaInd+1, shipThree.length());
+			
+			shipCity = preComma.trim();
+			for(int spaceLoopCounter = 0; spaceLoopCounter < postComma.length(); spaceLoopCounter++){
+				char c = postComma.charAt(spaceLoopCounter);
+				int i = (int) c;
+				if(i >= 65 && i <= 90){
+					shipState = shipState + c;
+				}
+				if(i >= 48 && i <= 57){
+					shipZip = shipZip + c;
+				}
+			}
+			for(int spaceLoopCounter = 0; spaceLoopCounter < shipFour.length(); spaceLoopCounter++){
+				char c = shipFour.charAt(spaceLoopCounter);
+				int i = (int) c;
+				if(i >= 65 && i <= 90){
+					shipState = shipState + c;
+				}
+				if(i >= 48 && i <= 57){
+					shipZip = shipZip + c;
+				}
+			}
+		}
+		else{
+			shipStreet = shipTwo.trim() + " " + shipThree.trim();
+			commaInd = shipFour.indexOf(",");
+			if(commaInd >=0){
+				String preComma = shipFour.substring(0,commaInd);
+				String postComma = shipFour.substring(commaInd+1, shipFour.length());
+				
+				shipCity = preComma.trim();
+				for(int spaceLoopCounter = 0; spaceLoopCounter < postComma.length(); spaceLoopCounter++){
+					char c = postComma.charAt(spaceLoopCounter);
+					int i = (int) c;
+					if(i >= 65 && i <= 90){
+						shipState = shipState + c;
+					}
+					if(i >= 48 && i <= 57){
+						shipZip = shipZip + c;
+					}
+				}
+			}
+			else{
+				//add error CATCH
+			}
+		}
+		return true;
 	}
 
 	public boolean inCredit() {
@@ -217,13 +340,14 @@ public class Edit implements Printable{
 		return orderChange;
 	}
 
-	public String getEditText() {
-		return editText;
-	}
-
+	
 	/////////////////////////
 	// GETTERS AND SETTERS //
 	/////////////////////////
+	
+	public String getEditText() {
+		return editText;
+	}
 
 	public int getCutNumber() {
 		return cutNumber;
@@ -248,9 +372,78 @@ public class Edit implements Printable{
 	public void setBillOne(String billOne) {
 		this.billOne = billOne;
 	}
+	
+	public String getManagementCo() {
+		return managementCo;
+	}
 
-	@Override
-	public int print(Graphics g, PageFormat pf, int i)
+	public void setManagementCo(String managementCo) {
+		this.managementCo = managementCo;
+	}
+
+	public String getShipStreet() {
+		return shipStreet;
+	}
+	
+
+	public void setShipStreet(String shipStreet) {
+		this.shipStreet = shipStreet;
+	}
+
+	
+	public String getShipCity() {
+		return shipCity;
+	}
+	
+
+	public void setShipCity(String shipCity) {
+		this.shipCity = shipCity;
+	}
+	
+
+	public String getShipState() {
+		return shipState;
+	}
+	
+
+	public void setShipState(String shipState) {
+		this.shipState = shipState;
+	}
+	
+
+	public String getShipZip() {
+		return shipZip;
+	}
+	
+
+	public void setShipZip(String shipZip) {
+		this.shipZip = shipZip;
+	}
+	
+	public String getShipOne() {
+		return shipOne;
+	}
+	
+	public String getPo() {
+		return po;
+	}
+
+	public void setPo(String po) {
+		this.po = po;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	
+public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+
+@Override
+public int print(Graphics g, PageFormat pf, int i)
 			throws PrinterException {
 		String[] lines = editText.split("\n");
 		
@@ -288,8 +481,5 @@ public class Edit implements Printable{
 		
 		return PAGE_EXISTS;
 	}
-
-
-
 
 }
