@@ -86,7 +86,7 @@ public class FileEmailer {
 			message.setSubject(subject);
 			message.setContent(text, "text/plain");
 			message.setSentDate(new Date());
-			Transport.send(message);
+			//Transport.send(message);
 			return true;
 		} catch (MessagingException mex) {
 			mex.printStackTrace();
@@ -115,7 +115,7 @@ public class FileEmailer {
 			multipart.addBodyPart(messageBodyPart);
 			message.setContent(multipart);
 			message.setSentDate(new Date());
-			Transport.send(message);
+			//Transport.send(message);
 
 			return true;
 		} catch (MessagingException mex) {
@@ -150,7 +150,7 @@ public class FileEmailer {
 
 			message.setContent(multipart);
 			message.setSentDate(new Date());
-			Transport.send(message);
+			//Transport.send(message);
 
 			return true;
 		} catch (MessagingException mex) {
@@ -186,7 +186,7 @@ public class FileEmailer {
 
 			message.setContent(multipart);
 			message.setSentDate(new Date());
-			Transport.send(message);
+			//Transport.send(message);
 
 			return true;
 		} catch (MessagingException mex) {

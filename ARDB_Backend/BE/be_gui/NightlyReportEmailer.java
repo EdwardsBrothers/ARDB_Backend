@@ -15,20 +15,20 @@ class NightlyReportEmailer extends ServicePanelInd {
 	 * 
 	 */
 
-	private FileEmailer creditReportFileEmailer;
+	private FileEmailer reportFileEmailer;
 	private String creditReportPath, creditListPath;
 	private File currentCreditReport, currentCreditList;
 	private long currentCreditReportTimeStamp, currentCreditListTimeStamp;
 	private SimpleDateFormat sdf, statusSdf;
-	private CreditReportListener crl;
+	private ReportListener rl;
 
 	public NightlyReportEmailer() {
-		super("Credit Report Emailer");
+		super("Nightly Report Emailer");
 		sdf = new SimpleDateFormat("MM-dd-yy");
 		statusSdf = new SimpleDateFormat("MM-dd-yy kk:mm");
-		creditReportFileEmailer = new FileEmailer();
-		crl = new CreditReportListener();
-		timer = new Timer(19854, crl);
+		reportFileEmailer = new FileEmailer();
+		rl = new ReportListener();
+		timer = new Timer(19854, rl);
 
 		creditReportPath = "Z:\\AAA-LATECR";
 		creditListPath = "Z:\\AAA-CHKCRD";
@@ -43,13 +43,19 @@ class NightlyReportEmailer extends ServicePanelInd {
 
 	}
 
-	private class CreditReportListener implements ActionListener {
+	private class ReportListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			File tempCreditReport = new File(creditReportPath);
 			long tempTimeStamp = tempCreditReport.lastModified();
 			if (tempTimeStamp != currentCreditReportTimeStamp) {
+				try {
+					Thread.sleep(60000*30);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				currentCreditReport = new File(creditReportPath);
 				currentCreditList = new File(creditListPath);
 				currentCreditReportTimeStamp = currentCreditReport.lastModified();
@@ -59,18 +65,19 @@ class NightlyReportEmailer extends ServicePanelInd {
 				attachmentFiles[0][1] = "Orders Still in Credit " + sdf.format(new Date()) + ".txt";
 				attachmentFiles[1][0] = creditListPath;
 				attachmentFiles[1][1] = "Credit List " + sdf.format(new Date()) + ".txt";
-				creditReportFileEmailer.sendEmailWithAttachment("ar@mariettadrapery.com",
+				reportFileEmailer.sendEmailWithAttachment("ar@mariettadrapery.com",
 						"Hold List " + sdf.format(new Date()), "", attachmentFiles); // UPDATE!
 
 				lblLastUpdate.setText(statusSdf.format(new Date()));
 				
-				
 				//Send new/inactive
-				creditReportFileEmailer.sendEmailWithAttachment("igarcia@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
-						"Z:\\PRINT-DYINAC", "NEW AND INACTIVES " + sdf.format(new Date()) + ".txt");
+				reportFileEmailer.sendEmailWithAttachment("igarcia@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
+					"Z:\\PRINT-DYINAC", "NEW AND INACTIVES " + sdf.format(new Date()) + ".txt");
 				
-				creditReportFileEmailer.sendEmailWithAttachment("tpaige@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
+				reportFileEmailer.sendEmailWithAttachment("tpaige@mariettadrapery.com", "New and Inactives for "+ sdf.format(new Date()), "Automated email from AR",
 						"Z:\\PRINT-DYINAC", "NEW AND INACTIVES " + sdf.format(new Date()) + ".txt");
+
+				
 			}
 
 		}

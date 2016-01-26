@@ -207,8 +207,8 @@ public class Edit implements Printable{
 		scan.close();
 		
 		billStreet = ""; billCity = ""; billState = ""; billZip = ""; shipStreet = ""; shipCity = ""; shipState = ""; shipZip = "";
-		//parseAddress();
-		//parseLineItems();
+		parseAddress();
+		parseLineItems();
 	}
 
 	private boolean parseLineItems(){
