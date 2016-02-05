@@ -432,8 +432,8 @@ public class Edit implements Printable{
 		this.po = po;
 	}
 
-	public Date getOrderDate() {
-		return orderDate;
+	public java.sql.Date getsqlOrderDate() {
+		return new java.sql.Date(orderDate.getTime());
 	}
 
 	
@@ -481,5 +481,13 @@ public int print(Graphics g, PageFormat pf, int i)
 		
 		return PAGE_EXISTS;
 	}
+
+public ArrayList<LineItem> getLiList() {
+	return liList;
+}
+
+public void setLiList(ArrayList<LineItem> liList) {
+	this.liList = liList;
+}
 
 }

@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ import java.util.Scanner;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+
 
 
 
@@ -176,7 +179,7 @@ public class EditHandler extends ServicePanelInd {
 		
 		printEdits(all);
 		
-		//checkESupply(all);
+		checkESupply(all);
 	}
 	
 	private void printEdits(ArrayList<Edit> all){
@@ -203,7 +206,7 @@ public class EditHandler extends ServicePanelInd {
 		ArrayList<Edit> es = new ArrayList<Edit>();
 		
 		for(Edit e : all){
-			if(e.getManagementCo().equals("ES")){
+			if(e.getManagementCo().trim().equals("ES")){
 				es.add(e);
 			}
 		}
@@ -220,7 +223,6 @@ public class EditHandler extends ServicePanelInd {
 			String dbConnect = "jdbc:mysql://10.36.40.250:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
 			Connection con = null;
 			Statement stmt = null;
-			ResultSet rs = null;
 			//
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(dbConnect);
@@ -241,19 +243,25 @@ public class EditHandler extends ServicePanelInd {
 				String zip = e.getShipZip();
 				int ordNum = e.getCutNumber();
 				String poNum = e.getPo();
-				Date orderDate = e.getOrderDate();
+				java.sql.Date orderDate = e.getsqlOrderDate();
 				
-				qs = qs + mgmt + ", " + propAcc + ", " + propName + ", " + add + ", " + city + ", " + state + ", " + zip + 
-						", " + ordNum + ", " + poNum + ", " + orderDate + ", ";
+				qs = qs + "'" + mgmt + "'" + ", " + "'" + propAcc+ "'" + ", " + "'" + propName + "'" + ", " + "'" + add + "'" + ", " + "'" + city + "'"
+				+ ", " +"'" + state + "'" + ", " + "'" + zip + "'" + ", " + ordNum + ", " + "'" + poNum + "'" + ", " + "'" + orderDate + "'" + ", ";
 				String base = qs;
+				
+				for(LineItem li : e.getLiList() ){
+					if(li.getNumCode() >= 0) {
+						qs = base + li.generateSQLQuery();
+						stmt = con.createStatement();
+						stmt.executeUpdate(qs);
+						qs = "";
+					}
 
+				}
 			}
-			
-		
-			
-			
-			
-			
+			stmt.closeOnCompletion();
+			con.close();
+
 			
 		}catch(Exception e){
 			e.printStackTrace();
