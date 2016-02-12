@@ -259,8 +259,6 @@ public class EditHandler extends ServicePanelInd {
 
 				}
 			}
-			stmt.closeOnCompletion();
-			con.close();
 
 			
 		}catch(Exception e){
