@@ -1,0 +1,995 @@
+BE/be_gui/BE_GUI.java:7:	headerCommentRequirement Required
+BE/be_gui/BE_GUI.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/BE_GUI.java:9:	fieldCommentRequirement Required
+BE/be_gui/BE_GUI.java:14:	Consider using varargs for methods or constructors which take an array the last parameter.
+BE/be_gui/BE_GUI.java:14:	Parameter 'args' is not assigned and could be declared final
+BE/be_gui/BE_GUI.java:15:	To be compliant to J2EE, a webapp should not use any thread.
+BE/be_gui/BE_GUI.java:17:	publicMethodCommentRequirement Required
+BE/be_gui/BE_GUI.java:19:	Local variable 'window' could be declared final
+BE/be_gui/BE_GUI.java:20:	Potential violation of Law of Demeter (static property access)
+BE/be_gui/BE_GUI.java:21:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/BE_GUI.java:22:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/BE_GUI.java:41:	Avoid excessively long variable names like e_GUI_ManagerPanel
+BE/be_gui/BE_GUI.java:41:	Local variable 'e_GUI_ManagerPanel' could be declared final
+BE/be_gui/BE_GUI.java:41:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'e_GUI_ManagerPanel' is not final.
+BE/be_gui/BE_GUI_ManagerPanel.java:9:	headerCommentRequirement Required
+BE/be_gui/BE_GUI_ManagerPanel.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/BE_GUI_ManagerPanel.java:11:	Private field 'menuPanel' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/BE_GUI_ManagerPanel.java:11:	fieldCommentRequirement Required
+BE/be_gui/BE_GUI_ManagerPanel.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/BE_GUI_ManagerPanel.java:12:	fieldCommentRequirement Required
+BE/be_gui/BE_GUI_ManagerPanel.java:17:	It is a good practice to call super() in a constructor
+BE/be_gui/BE_GUI_ManagerPanel.java:23:	Local variable 'bgl' could be declared final
+BE/be_gui/BE_GUI_ManagerPanel.java:30:	Each class should declare at least one constructor
+BE/be_gui/BE_GUI_ManagerPanel.java:30:	headerCommentRequirement Required
+BE/be_gui/BE_GUI_ManagerPanel.java:32:	Avoid variables with short names like cL
+BE/be_gui/BE_GUI_ManagerPanel.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/BE_GUI_ManagerPanel.java:32:	Use explicit scoping instead of the default package private level
+BE/be_gui/BE_GUI_ManagerPanel.java:32:	fieldCommentRequirement Required
+BE/be_gui/BE_GUI_ManagerPanel.java:35:	Avoid variables with short names like e
+BE/be_gui/BE_GUI_ManagerPanel.java:35:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/BE_GUI_ManagerPanel.java:35:	publicMethodCommentRequirement Required
+BE/be_gui/CutHandler.java:3:	headerCommentRequirement Required
+BE/be_gui/CutHandler.java:5:	publicMethodCommentRequirement Required
+BE/be_gui/DisplayPanel.java:9:	headerCommentRequirement Required
+BE/be_gui/DisplayPanel.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/DisplayPanel.java:11:	Use explicit scoping instead of the default package private level
+BE/be_gui/DisplayPanel.java:11:	fieldCommentRequirement Required
+BE/be_gui/DisplayPanel.java:16:	It is a good practice to call super() in a constructor
+BE/be_gui/DisplayPanel.java:19:	Local variable 'defaultPanel' could be declared final
+BE/be_gui/ESupplyHandler.java:3:	headerCommentRequirement Required
+BE/be_gui/ESupplyHandler.java:5:	publicMethodCommentRequirement Required
+BE/be_gui/ESupplyPanel.java:5:	headerCommentRequirement Required
+BE/be_gui/ESupplyPanel.java:10:	Avoid unnecessary constructors - the compiler will generate these for you
+BE/be_gui/ESupplyPanel.java:10:	Document empty constructor
+BE/be_gui/ESupplyPanel.java:10:	It is a good practice to call super() in a constructor
+BE/be_gui/Edit.java:1:	Possible God class (WMC=109, ATFD=15, TCC=0.047619047619047616)
+BE/be_gui/Edit.java:15:	Avoid unused imports such as 'javax.swing.text.JTextComponent'
+BE/be_gui/Edit.java:17:	Avoid short class names like Edit
+BE/be_gui/Edit.java:17:	The class 'Edit' has a Cyclomatic Complexity of 4 (Highest = 42).
+BE/be_gui/Edit.java:17:	The class 'Edit' has a Modified Cyclomatic Complexity of 3 (Highest = 27).
+BE/be_gui/Edit.java:17:	The class 'Edit' has a Standard Cyclomatic Complexity of 3 (Highest = 41).
+BE/be_gui/Edit.java:17:	headerCommentRequirement Required
+BE/be_gui/Edit.java:19:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:20:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:21:	Avoid unused private fields such as 'contact'.
+BE/be_gui/Edit.java:21:	Avoid variables with short names like po
+BE/be_gui/Edit.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:21:	Perhaps 'contact' could be replaced by a local variable.
+BE/be_gui/Edit.java:21:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:22:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:23:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'freight'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'gross'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'labor'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'misc'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'nonTaxable'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'surcharge'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'tax'.
+BE/be_gui/Edit.java:24:	Avoid unused private fields such as 'taxable'.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:24:	Perhaps 'freight' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'gross' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'labor' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'misc' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'nonTaxable' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'surcharge' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'tax' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	Perhaps 'taxable' could be replaced by a local variable.
+BE/be_gui/Edit.java:24:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:25:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/Edit.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:25:	Private field 'lineItems' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/Edit.java:25:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:26:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/Edit.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:26:	Perhaps 'liList' could be replaced by a local variable.
+BE/be_gui/Edit.java:26:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:27:	Field inCredit has the same name as a method
+BE/be_gui/Edit.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:27:	Private field 'creditCard' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/Edit.java:27:	Private field 'inCredit' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/Edit.java:27:	Private field 'orderChange' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/Edit.java:27:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:28:	Private field 'editText' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/Edit.java:28:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:30:	Avoid unused private fields such as 'billCity'.
+BE/be_gui/Edit.java:30:	Avoid unused private fields such as 'billStreet'.
+BE/be_gui/Edit.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Edit.java:30:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:31:	fieldCommentRequirement Required
+BE/be_gui/Edit.java:33:	Parameter 'editText' is not assigned and could be declared final
+BE/be_gui/Edit.java:33:	The constructor 'Edit' has a Cyclomatic Complexity of 42.
+BE/be_gui/Edit.java:33:	The constructor 'Edit' has a Modified Cyclomatic Complexity of 27.
+BE/be_gui/Edit.java:33:	The constructor 'Edit' has a Standard Cyclomatic Complexity of 41.
+BE/be_gui/Edit.java:33:	The constructor with 1 parameters has an NCSS line count of 147
+BE/be_gui/Edit.java:33:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:39:	Local variable 'scan' could be declared final
+BE/be_gui/Edit.java:63:	Switch statements should have a default label
+BE/be_gui/Edit.java:71:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:77:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:83:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:95:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:100:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:110:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:115:	Avoid using Literals in Conditional Statements
+BE/be_gui/Edit.java:136:	Position literals first in String comparisons
+BE/be_gui/Edit.java:148:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:155:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:162:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:169:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:176:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:183:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:190:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:197:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/Edit.java:214:	Found 'UR'-anomaly for variable 'l' (lines '214'-'217').
+BE/be_gui/Edit.java:216:	Local variable 'l' could be declared final
+BE/be_gui/Edit.java:217:	Avoid instantiating new objects inside loops
+BE/be_gui/Edit.java:224:	Avoid really long methods.
+BE/be_gui/Edit.java:224:	The method 'parseAddress' has a Cyclomatic Complexity of 35.
+BE/be_gui/Edit.java:224:	The method 'parseAddress' has a Modified Cyclomatic Complexity of 23.
+BE/be_gui/Edit.java:224:	The method 'parseAddress' has a Standard Cyclomatic Complexity of 23.
+BE/be_gui/Edit.java:224:	The method parseAddress() has an NPath complexity of 12321
+BE/be_gui/Edit.java:226:	String.indexOf(char) is faster than String.indexOf(String).
+BE/be_gui/Edit.java:228:	Local variable 'preComma' could be declared final
+BE/be_gui/Edit.java:229:	Local variable 'postComma' could be declared final
+BE/be_gui/Edit.java:231:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:232:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:233:	Avoid variables with short names like c
+BE/be_gui/Edit.java:233:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:233:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:234:	Avoid variables with short names like i
+BE/be_gui/Edit.java:234:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:243:	Avoid variables with short names like c
+BE/be_gui/Edit.java:243:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:244:	Avoid variables with short names like i
+BE/be_gui/Edit.java:244:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:255:	String.indexOf(char) is faster than String.indexOf(String).
+BE/be_gui/Edit.java:257:	Local variable 'preComma' could be declared final
+BE/be_gui/Edit.java:258:	Local variable 'postComma' could be declared final
+BE/be_gui/Edit.java:260:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:261:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:262:	Avoid variables with short names like c
+BE/be_gui/Edit.java:262:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:262:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:263:	Avoid variables with short names like i
+BE/be_gui/Edit.java:263:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:272:	Avoid empty if statements
+BE/be_gui/Edit.java:272:	Avoid empty if statements
+BE/be_gui/Edit.java:278:	String.indexOf(char) is faster than String.indexOf(String).
+BE/be_gui/Edit.java:280:	Local variable 'preComma' could be declared final
+BE/be_gui/Edit.java:281:	Local variable 'postComma' could be declared final
+BE/be_gui/Edit.java:283:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:284:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:285:	Avoid variables with short names like c
+BE/be_gui/Edit.java:285:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:285:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:286:	Avoid variables with short names like i
+BE/be_gui/Edit.java:286:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:295:	Avoid variables with short names like c
+BE/be_gui/Edit.java:295:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:296:	Avoid variables with short names like i
+BE/be_gui/Edit.java:296:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:307:	String.indexOf(char) is faster than String.indexOf(String).
+BE/be_gui/Edit.java:309:	Local variable 'preComma' could be declared final
+BE/be_gui/Edit.java:310:	Local variable 'postComma' could be declared final
+BE/be_gui/Edit.java:312:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:313:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:314:	Avoid variables with short names like c
+BE/be_gui/Edit.java:314:	Local variable 'c' could be declared final
+BE/be_gui/Edit.java:314:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:315:	Avoid variables with short names like i
+BE/be_gui/Edit.java:315:	Local variable 'i' could be declared final
+BE/be_gui/Edit.java:324:	Avoid empty if statements
+BE/be_gui/Edit.java:324:	Avoid empty if statements
+BE/be_gui/Edit.java:331:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:335:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:339:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:348:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:352:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:356:	Parameter 'cutNumber' is not assigned and could be declared final
+BE/be_gui/Edit.java:356:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:360:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:364:	Parameter 'customerID' is not assigned and could be declared final
+BE/be_gui/Edit.java:364:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:368:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:372:	Parameter 'billOne' is not assigned and could be declared final
+BE/be_gui/Edit.java:372:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:376:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:380:	Parameter 'managementCo' is not assigned and could be declared final
+BE/be_gui/Edit.java:380:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:384:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:389:	Parameter 'shipStreet' is not assigned and could be declared final
+BE/be_gui/Edit.java:389:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:394:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:399:	Parameter 'shipCity' is not assigned and could be declared final
+BE/be_gui/Edit.java:399:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:404:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:409:	Parameter 'shipState' is not assigned and could be declared final
+BE/be_gui/Edit.java:409:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:414:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:419:	Parameter 'shipZip' is not assigned and could be declared final
+BE/be_gui/Edit.java:419:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:423:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:427:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:431:	Avoid variables with short names like po
+BE/be_gui/Edit.java:431:	Parameter 'po' is not assigned and could be declared final
+BE/be_gui/Edit.java:431:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:435:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:440:	Parameter 'orderDate' is not assigned and could be declared final
+BE/be_gui/Edit.java:440:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:446:	Avoid variables with short names like g
+BE/be_gui/Edit.java:446:	Avoid variables with short names like i
+BE/be_gui/Edit.java:446:	Avoid variables with short names like pf
+BE/be_gui/Edit.java:446:	Parameter 'g' is not assigned and could be declared final
+BE/be_gui/Edit.java:446:	Parameter 'i' is not assigned and could be declared final
+BE/be_gui/Edit.java:446:	Parameter 'pf' is not assigned and could be declared final
+BE/be_gui/Edit.java:446:	The method print() has an NPath complexity of 200
+BE/be_gui/Edit.java:446:	publicMethodCommentRequirement Required
+BE/be_gui/Edit.java:448:	Local variable 'lines' could be declared final
+BE/be_gui/Edit.java:450:	Local variable 'font' could be declared final
+BE/be_gui/Edit.java:451:	Local variable 'metrics' could be declared final
+BE/be_gui/Edit.java:452:	Local variable 'lineHeight' could be declared final
+BE/be_gui/Edit.java:452:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:453:	Local variable 'pageHeight' could be declared final
+BE/be_gui/Edit.java:454:	Local variable 'linesPerPage' could be declared final
+BE/be_gui/Edit.java:454:	Useless parentheses.
+BE/be_gui/Edit.java:454:	Useless parentheses.
+BE/be_gui/Edit.java:455:	Local variable 'numBreaks' could be declared final
+BE/be_gui/Edit.java:456:	Found 'DD'-anomaly for variable 'pageBreaks' (lines '456'-'458').
+BE/be_gui/Edit.java:458:	Found 'DD'-anomaly for variable 'pageBreaks' (lines '458'-'458').
+BE/be_gui/Edit.java:462:	A method should have only one exit point, and that should be the last statement in the method
+BE/be_gui/Edit.java:465:	Avoid variables with short names like g2
+BE/be_gui/Edit.java:465:	Local variable 'g2' could be declared final
+BE/be_gui/Edit.java:466:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:467:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:468:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/Edit.java:473:	Avoid variables with short names like y
+BE/be_gui/Edit.java:473:	Found 'DU'-anomaly for variable 'y' (lines '473'-'483').
+BE/be_gui/Edit.java:474:	Local variable 'start' could be declared final
+BE/be_gui/Edit.java:475:	Local variable 'end' could be declared final
+BE/be_gui/Edit.java:479:	Potential violation of Law of Demeter (method chain calls)
+BE/be_gui/Edit.java:479:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:21:	Avoid unused imports such as 'javax.swing.JPanel'
+BE/be_gui/EditHandler.java:36:	The class 'EditHandler' has a Cyclomatic Complexity of 6 (Highest = 20).
+BE/be_gui/EditHandler.java:36:	The class 'EditHandler' has a Modified Cyclomatic Complexity of 5 (Highest = 17).
+BE/be_gui/EditHandler.java:36:	The class 'EditHandler' has a Standard Cyclomatic Complexity of 6 (Highest = 20).
+BE/be_gui/EditHandler.java:36:	headerCommentRequirement Required
+BE/be_gui/EditHandler.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:38:	Private field 'editFilePath' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/EditHandler.java:38:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:39:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:39:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:40:	Avoid excessively long variable names like currentEditTimeStamp
+BE/be_gui/EditHandler.java:40:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:40:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:41:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:41:	Private field 'editEmailer' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/EditHandler.java:41:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:42:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:42:	Private field 'sdf' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/EditHandler.java:42:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:44:	Avoid variables with short names like el
+BE/be_gui/EditHandler.java:44:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:44:	Perhaps 'el' could be replaced by a local variable.
+BE/be_gui/EditHandler.java:44:	Private field 'el' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/EditHandler.java:44:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:45:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/EditHandler.java:45:	Perhaps 'ping' could be replaced by a local variable.
+BE/be_gui/EditHandler.java:45:	Private field 'ping' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/EditHandler.java:45:	fieldCommentRequirement Required
+BE/be_gui/EditHandler.java:47:	publicMethodCommentRequirement Required
+BE/be_gui/EditHandler.java:50:	When instantiating a SimpleDateFormat object, specify a Locale
+BE/be_gui/EditHandler.java:69:	Avoid really long methods.
+BE/be_gui/EditHandler.java:69:	Parameter 'file' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:69:	The method 'parseEdits' has a Cyclomatic Complexity of 20.
+BE/be_gui/EditHandler.java:69:	The method 'parseEdits' has a Modified Cyclomatic Complexity of 17.
+BE/be_gui/EditHandler.java:69:	The method 'parseEdits' has a Standard Cyclomatic Complexity of 20.
+BE/be_gui/EditHandler.java:69:	The method parseEdits() has an NPath complexity of 2160
+BE/be_gui/EditHandler.java:70:	Use one line for each declaration, it enhances code readability.
+BE/be_gui/EditHandler.java:77:	Local variable 'scan' could be declared final
+BE/be_gui/EditHandler.java:79:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:80:	Avoid instantiating new objects inside loops
+BE/be_gui/EditHandler.java:80:	Avoid variables with short names like e
+BE/be_gui/EditHandler.java:80:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:80:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:81:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:82:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:83:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:85:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:86:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:88:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:89:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:92:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:94:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/EditHandler.java:94:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:95:	System.out.println is used
+BE/be_gui/EditHandler.java:99:	Found 'DD'-anomaly for variable 'fileCount' (lines '99'-'109').
+BE/be_gui/EditHandler.java:99:	Found 'DD'-anomaly for variable 'fileCount' (lines '99'-'115').
+BE/be_gui/EditHandler.java:99:	Found 'DD'-anomaly for variable 'fileCount' (lines '99'-'121').
+BE/be_gui/EditHandler.java:100:	Avoid unused local variables such as 'allEdits'.
+BE/be_gui/EditHandler.java:100:	Avoid unused local variables such as 'changeEdits'.
+BE/be_gui/EditHandler.java:100:	Avoid unused local variables such as 'creditCardEdits'.
+BE/be_gui/EditHandler.java:100:	Avoid unused local variables such as 'creditEdits'.
+BE/be_gui/EditHandler.java:100:	Use one line for each declaration, it enhances code readability.
+BE/be_gui/EditHandler.java:102:	Switch statements should have a default label
+BE/be_gui/EditHandler.java:104:	Found 'DU'-anomaly for variable 'allEdits' (lines '104'-'180').
+BE/be_gui/EditHandler.java:107:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:108:	Found 'DU'-anomaly for variable 'creditEdits' (lines '108'-'180').
+BE/be_gui/EditHandler.java:113:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:114:	Found 'DU'-anomaly for variable 'creditCardEdits' (lines '114'-'180').
+BE/be_gui/EditHandler.java:119:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:120:	Found 'DU'-anomaly for variable 'changeEdits' (lines '120'-'180').
+BE/be_gui/EditHandler.java:128:	Local variable 'subject' could be declared final
+BE/be_gui/EditHandler.java:129:	Local variable 'recipient' could be declared final
+BE/be_gui/EditHandler.java:130:	Local variable 'ccRecipient' could be declared final
+BE/be_gui/EditHandler.java:131:	Found 'DD'-anomaly for variable 'attachments' (lines '131'-'144').
+BE/be_gui/EditHandler.java:131:	Found 'DD'-anomaly for variable 'attachments' (lines '131'-'157').
+BE/be_gui/EditHandler.java:131:	Found 'DD'-anomaly for variable 'attachments' (lines '131'-'170').
+BE/be_gui/EditHandler.java:134:	Found 'DU'-anomaly for variable 'fileCount' (lines '134'-'180').
+BE/be_gui/EditHandler.java:135:	Found 'DD'-anomaly for variable 'body' (lines '135'-'136').
+BE/be_gui/EditHandler.java:136:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:137:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:138:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:140:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:141:	Local variable 'eout' could be declared final
+BE/be_gui/EditHandler.java:141:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:141:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:141:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:142:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:144:	Found 'DD'-anomaly for variable 'attachments' (lines '144'-'145').
+BE/be_gui/EditHandler.java:145:	Found 'DD'-anomaly for variable 'attachments' (lines '145'-'157').
+BE/be_gui/EditHandler.java:145:	Found 'DD'-anomaly for variable 'attachments' (lines '145'-'170').
+BE/be_gui/EditHandler.java:146:	Found 'DU'-anomaly for variable 'fileCount' (lines '146'-'180').
+BE/be_gui/EditHandler.java:148:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:149:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:150:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:151:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:153:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:154:	Local variable 'eout' could be declared final
+BE/be_gui/EditHandler.java:154:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:154:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:154:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:155:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:157:	Found 'DD'-anomaly for variable 'attachments' (lines '157'-'158').
+BE/be_gui/EditHandler.java:158:	Found 'DD'-anomaly for variable 'attachments' (lines '158'-'170').
+BE/be_gui/EditHandler.java:159:	Found 'DU'-anomaly for variable 'fileCount' (lines '159'-'180').
+BE/be_gui/EditHandler.java:161:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:162:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:163:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:164:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:166:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:167:	Local variable 'eout' could be declared final
+BE/be_gui/EditHandler.java:167:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:167:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:167:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:168:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:170:	Found 'DD'-anomaly for variable 'attachments' (lines '170'-'171').
+BE/be_gui/EditHandler.java:172:	Found 'DU'-anomaly for variable 'fileCount' (lines '172'-'180').
+BE/be_gui/EditHandler.java:182:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/EditHandler.java:182:	Found 'UR'-anomaly for variable 'e' (lines '182'-'193').
+BE/be_gui/EditHandler.java:182:	Parameter 'all' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:184:	Avoid variables with short names like pj
+BE/be_gui/EditHandler.java:184:	Local variable 'pj' could be declared final
+BE/be_gui/EditHandler.java:185:	Avoid variables with short names like pf
+BE/be_gui/EditHandler.java:185:	Local variable 'pf' could be declared final
+BE/be_gui/EditHandler.java:185:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:186:	Local variable 'paper' could be declared final
+BE/be_gui/EditHandler.java:188:	Local variable 'margin' could be declared final
+BE/be_gui/EditHandler.java:191:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:192:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:193:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:195:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:197:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/EditHandler.java:202:	Avoid unused private methods such as 'checkESupply(ArrayList)'.
+BE/be_gui/EditHandler.java:202:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/EditHandler.java:202:	Found 'UR'-anomaly for variable 'e' (lines '202'-'206').
+BE/be_gui/EditHandler.java:202:	Parameter 'all' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:203:	Avoid variables with short names like es
+BE/be_gui/EditHandler.java:203:	Local variable 'es' could be declared final
+BE/be_gui/EditHandler.java:205:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:206:	Potential violation of Law of Demeter (method chain calls)
+BE/be_gui/EditHandler.java:214:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/EditHandler.java:214:	Avoid variables with short names like es
+BE/be_gui/EditHandler.java:214:	Found 'UR'-anomaly for variable 'e' (lines '214'-'235').
+BE/be_gui/EditHandler.java:214:	Parameter 'es' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:216:	Comment is too large: Line too long
+BE/be_gui/EditHandler.java:220:	Local variable 'dbConnect' could be declared final
+BE/be_gui/EditHandler.java:221:	Avoid unused local variables such as 'con'.
+BE/be_gui/EditHandler.java:221:	Found 'DD'-anomaly for variable 'con' (lines '221'-'226').
+BE/be_gui/EditHandler.java:222:	Avoid unused local variables such as 'stmt'.
+BE/be_gui/EditHandler.java:222:	Found 'DU'-anomaly for variable 'stmt' (lines '222'-'262').
+BE/be_gui/EditHandler.java:222:	Local variable 'stmt' could be declared final
+BE/be_gui/EditHandler.java:223:	Avoid unused local variables such as 'rs'.
+BE/be_gui/EditHandler.java:223:	Avoid variables with short names like rs
+BE/be_gui/EditHandler.java:223:	Found 'DU'-anomaly for variable 'rs' (lines '223'-'262').
+BE/be_gui/EditHandler.java:223:	Local variable 'rs' could be declared final
+BE/be_gui/EditHandler.java:226:	Found 'DU'-anomaly for variable 'con' (lines '226'-'262').
+BE/be_gui/EditHandler.java:227:	System.out.println is used
+BE/be_gui/EditHandler.java:230:	Avoid variables with short names like qs
+BE/be_gui/EditHandler.java:230:	Found 'DD'-anomaly for variable 'qs' (lines '230'-'232').
+BE/be_gui/EditHandler.java:230:	Found 'DU'-anomaly for variable 'qs' (lines '230'-'262').
+BE/be_gui/EditHandler.java:231:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:232:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:235:	Local variable 'mgmt' could be declared final
+BE/be_gui/EditHandler.java:235:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:236:	Local variable 'propAcc' could be declared final
+BE/be_gui/EditHandler.java:236:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:237:	Local variable 'propName' could be declared final
+BE/be_gui/EditHandler.java:237:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:238:	Local variable 'add' could be declared final
+BE/be_gui/EditHandler.java:238:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:239:	Local variable 'city' could be declared final
+BE/be_gui/EditHandler.java:239:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:240:	Local variable 'state' could be declared final
+BE/be_gui/EditHandler.java:240:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:241:	Local variable 'zip' could be declared final
+BE/be_gui/EditHandler.java:241:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:242:	Local variable 'ordNum' could be declared final
+BE/be_gui/EditHandler.java:242:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:243:	Local variable 'poNum' could be declared final
+BE/be_gui/EditHandler.java:243:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:244:	Local variable 'orderDate' could be declared final
+BE/be_gui/EditHandler.java:244:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:246:	Prefer StringBuffer over += for concatenating strings
+BE/be_gui/EditHandler.java:248:	Avoid unused local variables such as 'base'.
+BE/be_gui/EditHandler.java:248:	Found 'DD'-anomaly for variable 'base' (lines '248'-'248').
+BE/be_gui/EditHandler.java:248:	Found 'DU'-anomaly for variable 'base' (lines '248'-'262').
+BE/be_gui/EditHandler.java:248:	Local variable 'base' could be declared final
+BE/be_gui/EditHandler.java:258:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+BE/be_gui/EditHandler.java:259:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/EditHandler.java:259:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:264:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/EditHandler.java:264:	Found 'UR'-anomaly for variable 'e' (lines '264'-'270').
+BE/be_gui/EditHandler.java:264:	Parameter 'editList' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:264:	Parameter 'name' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:266:	Local variable 'editFile' could be declared final
+BE/be_gui/EditHandler.java:268:	Avoid variables with short names like pw
+BE/be_gui/EditHandler.java:268:	Local variable 'pw' could be declared final
+BE/be_gui/EditHandler.java:269:	Local variable 'e' could be declared final
+BE/be_gui/EditHandler.java:274:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/EditHandler.java:275:	System.out.println is used
+BE/be_gui/EditHandler.java:277:	A method should have only one exit point, and that should be the last statement in the method
+BE/be_gui/EditHandler.java:282:	Each class should declare at least one constructor
+BE/be_gui/EditHandler.java:282:	headerCommentRequirement Required
+BE/be_gui/EditHandler.java:285:	Avoid variables with short names like e
+BE/be_gui/EditHandler.java:285:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:285:	publicMethodCommentRequirement Required
+BE/be_gui/EditHandler.java:286:	Local variable 'tempFile' could be declared final
+BE/be_gui/EditHandler.java:287:	Local variable 'tempTimeStamp' could be declared final
+BE/be_gui/EditHandler.java:287:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/EditHandler.java:300:	Each class should declare at least one constructor
+BE/be_gui/EditHandler.java:300:	headerCommentRequirement Required
+BE/be_gui/EditHandler.java:303:	Avoid variables with short names like e
+BE/be_gui/EditHandler.java:303:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/EditHandler.java:303:	publicMethodCommentRequirement Required
+BE/be_gui/EditHandler.java:305:	Potential violation of Law of Demeter (method chain calls)
+BE/be_gui/GoldmarkHandler.java:3:	headerCommentRequirement Required
+BE/be_gui/GoldmarkHandler.java:5:	publicMethodCommentRequirement Required
+BE/be_gui/GoldmarkPanel.java:7:	Avoid unused imports such as 'javax.swing.border.CompoundBorder'
+BE/be_gui/GoldmarkPanel.java:8:	Avoid unused imports such as 'javax.swing.border.EtchedBorder'
+BE/be_gui/GoldmarkPanel.java:10:	headerCommentRequirement Required
+BE/be_gui/GoldmarkPanel.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/GoldmarkPanel.java:12:	Perhaps 'scrollPane' could be replaced by a local variable.
+BE/be_gui/GoldmarkPanel.java:12:	Private field 'scrollPane' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/GoldmarkPanel.java:12:	fieldCommentRequirement Required
+BE/be_gui/GoldmarkPanel.java:17:	It is a good practice to call super() in a constructor
+BE/be_gui/Invoice.java:7:	The class 'Invoice' has a Cyclomatic Complexity of 10 (Highest = 28).
+BE/be_gui/Invoice.java:7:	The class 'Invoice' has a Modified Cyclomatic Complexity of 5 (Highest = 13).
+BE/be_gui/Invoice.java:7:	The class 'Invoice' has a Standard Cyclomatic Complexity of 10 (Highest = 28).
+BE/be_gui/Invoice.java:7:	headerCommentRequirement Required
+BE/be_gui/Invoice.java:9:	Avoid unused private fields such as 'invoiceDate'.
+BE/be_gui/Invoice.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:9:	Perhaps 'invoiceDate' could be replaced by a local variable.
+BE/be_gui/Invoice.java:9:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'billFour'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'billOne'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'billThree'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'billTwo'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'shipFour'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'shipOne'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'shipThree'.
+BE/be_gui/Invoice.java:10:	Avoid unused private fields such as 'shipTwo'.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:10:	Perhaps 'billThree' could be replaced by a local variable.
+BE/be_gui/Invoice.java:10:	Perhaps 'billTwo' could be replaced by a local variable.
+BE/be_gui/Invoice.java:10:	Perhaps 'customerID' could be replaced by a local variable.
+BE/be_gui/Invoice.java:10:	Perhaps 'shipOne' could be replaced by a local variable.
+BE/be_gui/Invoice.java:10:	Perhaps 'shipTwo' could be replaced by a local variable.
+BE/be_gui/Invoice.java:10:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'dateOrdered'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'dateShipped'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'managementCo'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'phone'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'po'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'salesName'.
+BE/be_gui/Invoice.java:11:	Avoid unused private fields such as 'salesNumber'.
+BE/be_gui/Invoice.java:11:	Avoid variables with short names like po
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:11:	Perhaps 'dateOrdered' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	Perhaps 'dateShipped' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	Perhaps 'managementCo' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	Perhaps 'phone' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	Perhaps 'salesName' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	Perhaps 'salesNumber' could be replaced by a local variable.
+BE/be_gui/Invoice.java:11:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:12:	Avoid unused private fields such as 'pricing'.
+BE/be_gui/Invoice.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:12:	Perhaps 'pricing' could be replaced by a local variable.
+BE/be_gui/Invoice.java:12:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:13:	Avoid unused private fields such as 'invoiceNumber'.
+BE/be_gui/Invoice.java:13:	Avoid unused private fields such as 'invoiceText'.
+BE/be_gui/Invoice.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:13:	Perhaps 'invoiceNumber' could be replaced by a local variable.
+BE/be_gui/Invoice.java:13:	Perhaps 'invoiceText' could be replaced by a local variable.
+BE/be_gui/Invoice.java:13:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:14:	Avoid unused private fields such as 'cutNumber'.
+BE/be_gui/Invoice.java:14:	Avoid unused private fields such as 'pageNumber'.
+BE/be_gui/Invoice.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:14:	Perhaps 'cutNumber' could be replaced by a local variable.
+BE/be_gui/Invoice.java:14:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'handling'.
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'labor'.
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'nonTaxable'.
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'tax'.
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'taxable'.
+BE/be_gui/Invoice.java:15:	Avoid unused private fields such as 'total'.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:15:	Perhaps 'handling' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	Perhaps 'labor' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	Perhaps 'nonTaxable' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	Perhaps 'tax' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	Perhaps 'taxable' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	Perhaps 'total' could be replaced by a local variable.
+BE/be_gui/Invoice.java:15:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:16:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/Invoice.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:16:	Perhaps 'lineItems' could be replaced by a local variable.
+BE/be_gui/Invoice.java:16:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:17:	Use explicit scoping instead of the default package private level
+BE/be_gui/Invoice.java:17:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:18:	Avoid excessively long variable names like sendElectronically
+BE/be_gui/Invoice.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/Invoice.java:18:	fieldCommentRequirement Required
+BE/be_gui/Invoice.java:21:	Parameter 'invoice' is not assigned and could be declared final
+BE/be_gui/Invoice.java:21:	The constructor 'Invoice' has a Cyclomatic Complexity of 28.
+BE/be_gui/Invoice.java:21:	The constructor 'Invoice' has a Modified Cyclomatic Complexity of 13.
+BE/be_gui/Invoice.java:21:	The constructor 'Invoice' has a Standard Cyclomatic Complexity of 28.
+BE/be_gui/Invoice.java:21:	The constructor with 1 parameters has an NCSS line count of 104
+BE/be_gui/Invoice.java:21:	publicMethodCommentRequirement Required
+BE/be_gui/Invoice.java:23:	Local variable 'scan' could be declared final
+BE/be_gui/Invoice.java:31:	Switch statements should have a default label
+BE/be_gui/Invoice.java:37:	An operation on an Immutable object (String, BigDecimal or BigInteger) wont change the object itself
+BE/be_gui/Invoice.java:37:	An operation on an Immutable object (String, BigDecimal or BigInteger) wont change the object itself
+BE/be_gui/Invoice.java:41:	Avoid using Literals in Conditional Statements
+BE/be_gui/Invoice.java:136:	System.out.println is used
+BE/be_gui/Invoice.java:137:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/Invoice.java:146:	Avoid unused constructor parameters such as 'invoice'.
+BE/be_gui/Invoice.java:146:	Avoid unused constructor parameters such as 'valid'.
+BE/be_gui/Invoice.java:146:	Document empty constructor
+BE/be_gui/Invoice.java:146:	Parameter 'invoice' is not assigned and could be declared final
+BE/be_gui/Invoice.java:146:	Parameter 'valid' is not assigned and could be declared final
+BE/be_gui/Invoice.java:146:	publicMethodCommentRequirement Required
+BE/be_gui/Invoice.java:151:	publicMethodCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:17:	headerCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:19:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:20:	Avoid excessively long variable names like currentInvoiceFile
+BE/be_gui/InvoiceHandler.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:20:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:21:	Avoid excessively long variable names like currentInvoiceTimeStamp
+BE/be_gui/InvoiceHandler.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:21:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:22:	Avoid unused private fields such as 'invoiceEmailer'.
+BE/be_gui/InvoiceHandler.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:22:	Perhaps 'invoiceEmailer' could be replaced by a local variable.
+BE/be_gui/InvoiceHandler.java:22:	Private field 'invoiceEmailer' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/InvoiceHandler.java:22:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:23:	Avoid unused private fields such as 'invGen'.
+BE/be_gui/InvoiceHandler.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:23:	Perhaps 'invGen' could be replaced by a local variable.
+BE/be_gui/InvoiceHandler.java:23:	Private field 'invGen' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/InvoiceHandler.java:23:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:24:	Perhaps 'sdf' could be replaced by a local variable.
+BE/be_gui/InvoiceHandler.java:24:	Private field 'sdf' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/InvoiceHandler.java:24:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:25:	Avoid variables with short names like il
+BE/be_gui/InvoiceHandler.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/InvoiceHandler.java:25:	Perhaps 'il' could be replaced by a local variable.
+BE/be_gui/InvoiceHandler.java:25:	Private field 'il' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/InvoiceHandler.java:25:	fieldCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:28:	publicMethodCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:30:	When instantiating a SimpleDateFormat object, specify a Locale
+BE/be_gui/InvoiceHandler.java:46:	Parameter 'file' is not assigned and could be declared final
+BE/be_gui/InvoiceHandler.java:47:	Found 'DU'-anomaly for variable 'invoices' (lines '47'-'72').
+BE/be_gui/InvoiceHandler.java:47:	Local variable 'invoices' could be declared final
+BE/be_gui/InvoiceHandler.java:48:	Found 'DU'-anomaly for variable 'electronic' (lines '48'-'72').
+BE/be_gui/InvoiceHandler.java:48:	Local variable 'electronic' could be declared final
+BE/be_gui/InvoiceHandler.java:50:	Local variable 'scan' could be declared final
+BE/be_gui/InvoiceHandler.java:54:	A method should have only one exit point, and that should be the last statement in the method
+BE/be_gui/InvoiceHandler.java:58:	Avoid instantiating new objects inside loops
+BE/be_gui/InvoiceHandler.java:58:	Avoid variables with short names like i
+BE/be_gui/InvoiceHandler.java:58:	Local variable 'i' could be declared final
+BE/be_gui/InvoiceHandler.java:69:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/InvoiceHandler.java:74:	Avoid unused method parameters such as 'invoices'.
+BE/be_gui/InvoiceHandler.java:74:	Avoid using implementation types like 'ArrayList'; use the interface instead
+BE/be_gui/InvoiceHandler.java:74:	Parameter 'invoices' is not assigned and could be declared final
+BE/be_gui/InvoiceHandler.java:80:	Each class should declare at least one constructor
+BE/be_gui/InvoiceHandler.java:80:	headerCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:83:	Avoid variables with short names like e
+BE/be_gui/InvoiceHandler.java:83:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/InvoiceHandler.java:83:	publicMethodCommentRequirement Required
+BE/be_gui/InvoiceHandler.java:84:	Local variable 'tempFile' could be declared final
+BE/be_gui/InvoiceHandler.java:85:	Local variable 'tempTimeStamp' could be declared final
+BE/be_gui/InvoiceHandler.java:85:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/ItemHistoryHandler.java:11:	headerCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ItemHistoryHandler.java:16:	Private field 'itemHistoryPath' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ItemHistoryHandler.java:16:	fieldCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:17:	Avoid excessively long variable names like currentItemHistory
+BE/be_gui/ItemHistoryHandler.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ItemHistoryHandler.java:17:	fieldCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:18:	Avoid excessively long variable names like currentItemHistoryTimeStamp
+BE/be_gui/ItemHistoryHandler.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ItemHistoryHandler.java:18:	fieldCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ItemHistoryHandler.java:19:	Private field 'sdf' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ItemHistoryHandler.java:19:	fieldCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ItemHistoryHandler.java:20:	Perhaps 'ihl' could be replaced by a local variable.
+BE/be_gui/ItemHistoryHandler.java:20:	Private field 'ihl' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ItemHistoryHandler.java:20:	fieldCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:22:	publicMethodCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:24:	When instantiating a SimpleDateFormat object, specify a Locale
+BE/be_gui/ItemHistoryHandler.java:37:	Each class should declare at least one constructor
+BE/be_gui/ItemHistoryHandler.java:37:	headerCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:40:	Avoid variables with short names like e
+BE/be_gui/ItemHistoryHandler.java:40:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/ItemHistoryHandler.java:40:	publicMethodCommentRequirement Required
+BE/be_gui/ItemHistoryHandler.java:41:	Local variable 'tempItemHistory' could be declared final
+BE/be_gui/ItemHistoryHandler.java:42:	Local variable 'tempTimeStamp' could be declared final
+BE/be_gui/ItemHistoryHandler.java:42:	Potential violation of Law of Demeter (object not created locally)
+BE/be_gui/LineItem.java:3:	The class 'LineItem' has a Cyclomatic Complexity of 25 (Highest = 24).
+BE/be_gui/LineItem.java:3:	The class 'LineItem' has a Modified Cyclomatic Complexity of 18 (Highest = 17).
+BE/be_gui/LineItem.java:3:	The class 'LineItem' has a Standard Cyclomatic Complexity of 25 (Highest = 24).
+BE/be_gui/LineItem.java:3:	headerCommentRequirement Required
+BE/be_gui/LineItem.java:5:	Avoid unused private fields such as 'lineText'.
+BE/be_gui/LineItem.java:5:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:6:	Avoid unused private fields such as 'code'.
+BE/be_gui/LineItem.java:6:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:7:	Avoid unused private fields such as 'width'.
+BE/be_gui/LineItem.java:7:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:8:	Avoid unused private fields such as 'drop'.
+BE/be_gui/LineItem.java:8:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:9:	Avoid unused private fields such as 'special'.
+BE/be_gui/LineItem.java:9:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/LineItem.java:10:	Perhaps 'productName' could be replaced by a local variable.
+BE/be_gui/LineItem.java:10:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:12:	Avoid unused private fields such as 'purchaseTypeName'.
+BE/be_gui/LineItem.java:12:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:13:	Avoid unused private fields such as 'sku'.
+BE/be_gui/LineItem.java:13:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:14:	Avoid unused private fields such as 'quantity'.
+BE/be_gui/LineItem.java:14:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:15:	Avoid unused private fields such as 'uom'.
+BE/be_gui/LineItem.java:15:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:16:	Avoid unused private fields such as 'unitPrice'.
+BE/be_gui/LineItem.java:16:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:17:	Avoid unused private fields such as 'extendedPrice'.
+BE/be_gui/LineItem.java:17:	fieldCommentRequirement Required
+BE/be_gui/LineItem.java:19:	Parameter 'line' is not assigned and could be declared final
+BE/be_gui/LineItem.java:19:	The constructor 'LineItem' has a Cyclomatic Complexity of 24.
+BE/be_gui/LineItem.java:19:	The constructor 'LineItem' has a Modified Cyclomatic Complexity of 17.
+BE/be_gui/LineItem.java:19:	The constructor 'LineItem' has a Standard Cyclomatic Complexity of 24.
+BE/be_gui/LineItem.java:19:	publicMethodCommentRequirement Required
+BE/be_gui/LineItem.java:29:	A high ratio of statements to labels in a switch statement.  Consider refactoring.
+BE/be_gui/LineItem.java:29:	Switch statements should have a default label
+BE/be_gui/LineItem.java:31:	Switch statements should have a default label
+BE/be_gui/LineItem.java:34:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:37:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:40:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:43:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:46:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:48:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:51:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:53:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:54:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:56:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:57:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:60:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:79:	Switch statements should have a default label
+BE/be_gui/LineItem.java:83:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:84:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:86:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:87:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:89:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:95:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:96:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:98:	Avoid using Literals in Conditional Statements
+BE/be_gui/LineItem.java:99:	Avoid using if...else statements without curly braces
+BE/be_gui/LineItem.java:101:	Avoid using if...else statements without curly braces
+BE/be_gui/MenuPanel.java:14:	headerCommentRequirement Required
+BE/be_gui/MenuPanel.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/MenuPanel.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/MenuPanel.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/MenuPanel.java:16:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'btnNewButton_1' is not final.
+BE/be_gui/MenuPanel.java:16:	Perhaps 'btnESupply' could be replaced by a local variable.
+BE/be_gui/MenuPanel.java:16:	Perhaps 'btnGoldmark' could be replaced by a local variable.
+BE/be_gui/MenuPanel.java:16:	Perhaps 'btnNewButton_1' could be replaced by a local variable.
+BE/be_gui/MenuPanel.java:16:	Private field 'btnESupply' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/MenuPanel.java:16:	Private field 'btnGoldmark' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/MenuPanel.java:16:	Private field 'btnNewButton_1' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/MenuPanel.java:16:	fieldCommentRequirement Required
+BE/be_gui/MenuPanel.java:21:	It is a good practice to call super() in a constructor
+BE/be_gui/MenuPanel.java:23:	Local variable 'flowLayout' could be declared final
+BE/be_gui/MenuPanel.java:28:	Local variable 'lblMenu' could be declared final
+BE/be_gui/MenuPanel.java:52:	publicMethodCommentRequirement Required
+BE/be_gui/MenuPanel.java:56:	Parameter 'btnServices' is not assigned and could be declared final
+BE/be_gui/MenuPanel.java:56:	publicMethodCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:13:	headerCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:18:	Private field 'reportFileEmailer' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:18:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:19:	Private field 'creditListPath' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:19:	Private field 'creditReportPath' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:19:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:20:	Avoid excessively long variable names like currentCreditReport
+BE/be_gui/NightlyReportEmailer.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:20:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:21:	Avoid excessively long variable names like currentCreditListTimeStamp
+BE/be_gui/NightlyReportEmailer.java:21:	Avoid excessively long variable names like currentCreditReportTimeStamp
+BE/be_gui/NightlyReportEmailer.java:21:	Avoid unused private fields such as 'currentCreditListTimeStamp'.
+BE/be_gui/NightlyReportEmailer.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:21:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:22:	Private field 'sdf' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:22:	Private field 'statusSdf' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:22:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:23:	Avoid variables with short names like rl
+BE/be_gui/NightlyReportEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/NightlyReportEmailer.java:23:	Perhaps 'rl' could be replaced by a local variable.
+BE/be_gui/NightlyReportEmailer.java:23:	Private field 'rl' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/NightlyReportEmailer.java:23:	fieldCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:25:	publicMethodCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:27:	When instantiating a SimpleDateFormat object, specify a Locale
+BE/be_gui/NightlyReportEmailer.java:28:	When instantiating a SimpleDateFormat object, specify a Locale
+BE/be_gui/NightlyReportEmailer.java:46:	Each class should declare at least one constructor
+BE/be_gui/NightlyReportEmailer.java:46:	headerCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:49:	Avoid variables with short names like e
+BE/be_gui/NightlyReportEmailer.java:49:	Parameter 'e' is not assigned and could be declared final
+BE/be_gui/NightlyReportEmailer.java:49:	publicMethodCommentRequirement Required
+BE/be_gui/NightlyReportEmailer.java:50:	Local variable 'tempCreditReport' could be declared final
+BE/be_gui/NightlyReportEmailer.java:51:	Local variable 'tempTimeStamp' could be declared final
+BE/be_gui/NightlyReportEmailer.java:57:	Avoid printStackTrace(); use a logger call instead.
+BE/be_gui/NightlyReportEmailer.java:63:	Found 'DD'-anomaly for variable 'attachmentFiles' (lines '63'-'64').
+BE/be_gui/NightlyReportEmailer.java:64:	Found 'DD'-anomaly for variable 'attachmentFiles' (lines '64'-'65').
+BE/be_gui/NightlyReportEmailer.java:65:	Found 'DD'-anomaly for variable 'attachmentFiles' (lines '65'-'66').
+BE/be_gui/NightlyReportEmailer.java:65:	The String literal ".txt" appears 4 times in this file; the first occurrence is on line 65
+BE/be_gui/NightlyReportEmailer.java:66:	Found 'DD'-anomaly for variable 'attachmentFiles' (lines '66'-'67').
+BE/be_gui/ServicePanel.java:9:	headerCommentRequirement Required
+BE/be_gui/ServicePanel.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:11:	Perhaps 'editHandler' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:11:	Private field 'editHandler' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:11:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:12:	Perhaps 'cutHandler' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:12:	Private field 'cutHandler' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:12:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:13:	Avoid unused private fields such as 'invoiceHandler'.
+BE/be_gui/ServicePanel.java:13:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:14:	Perhaps 'goldmarkHandler' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:14:	Private field 'goldmarkHandler' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:14:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:15:	Perhaps 'eSupplyHandler' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:15:	Private field 'eSupplyHandler' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:15:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:16:	Avoid excessively long variable names like nightlyReportEmailer
+BE/be_gui/ServicePanel.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:16:	Perhaps 'nightlyReportEmailer' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:16:	Private field 'nightlyReportEmailer' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:16:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:17:	Avoid excessively long variable names like itemHistoryHandler
+BE/be_gui/ServicePanel.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanel.java:17:	Perhaps 'itemHistoryHandler' could be replaced by a local variable.
+BE/be_gui/ServicePanel.java:17:	Private field 'itemHistoryHandler' could be made final; it is only initialized in the declaration or constructor.
+BE/be_gui/ServicePanel.java:17:	fieldCommentRequirement Required
+BE/be_gui/ServicePanel.java:24:	It is a good practice to call super() in a constructor
+BE/be_gui/ServicePanel.java:28:	Local variable 'titlePanel' could be declared final
+BE/be_gui/ServicePanelInd.java:14:	Abstract classes should be named AbstractXXX
+BE/be_gui/ServicePanelInd.java:14:	headerCommentRequirement Required
+BE/be_gui/ServicePanelInd.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanelInd.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanelInd.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanelInd.java:16:	fieldCommentRequirement Required
+BE/be_gui/ServicePanelInd.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanelInd.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/be_gui/ServicePanelInd.java:17:	fieldCommentRequirement Required
+BE/be_gui/ServicePanelInd.java:18:	fieldCommentRequirement Required
+BE/be_gui/ServicePanelInd.java:23:	It is a good practice to call super() in a constructor
+BE/be_gui/ServicePanelInd.java:23:	Parameter 'serviceName' is not assigned and could be declared final
+BE/be_gui/ServicePanelInd.java:27:	Local variable 'flowLayout' could be declared final
+BE/be_gui/ServicePanelTitle.java:14:	headerCommentRequirement Required
+BE/be_gui/ServicePanelTitle.java:19:	It is a good practice to call super() in a constructor
+BE/be_gui/ServicePanelTitle.java:22:	Local variable 'flowLayout' could be declared final
+BE/be_gui/ServicePanelTitle.java:28:	Avoid excessively long variable names like lblServicePanelTitle
+BE/be_gui/ServicePanelTitle.java:28:	Local variable 'lblServicePanelTitle' could be declared final
+BE/be_gui/ServicePanelTitle.java:29:	The String literal "Arial" appears 4 times in this file; the first occurrence is on line 29
+BE/be_gui/ServicePanelTitle.java:35:	Local variable 'lblService' could be declared final
+BE/be_gui/ServicePanelTitle.java:40:	Local variable 'lblStatus' could be declared final
+BE/be_gui/ServicePanelTitle.java:46:	Local variable 'lblLastUpdate' could be declared final
+BE/utilities/FileEmailer.java:15:	Avoid unused imports such as 'javax.mail.Transport'
+BE/utilities/FileEmailer.java:21:	headerCommentRequirement Required
+BE/utilities/FileEmailer.java:23:	Avoid unused private fields such as 'senderName'.
+BE/utilities/FileEmailer.java:23:	Avoid unused private fields such as 'smtpTLS'.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:23:	Private field 'emailHost' could be made final; it is only initialized in the declaration or constructor.
+BE/utilities/FileEmailer.java:23:	Private field 'senderEmail' could be made final; it is only initialized in the declaration or constructor.
+BE/utilities/FileEmailer.java:23:	Private field 'senderName' could be made final; it is only initialized in the declaration or constructor.
+BE/utilities/FileEmailer.java:23:	Private field 'senderPassword' could be made final; it is only initialized in the declaration or constructor.
+BE/utilities/FileEmailer.java:23:	fieldCommentRequirement Required
+BE/utilities/FileEmailer.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:24:	Private field 'smtpPort' could be made final; it is only initialized in the declaration or constructor.
+BE/utilities/FileEmailer.java:24:	fieldCommentRequirement Required
+BE/utilities/FileEmailer.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/FileEmailer.java:25:	fieldCommentRequirement Required
+BE/utilities/FileEmailer.java:27:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:39:	Parameter 'emailHost' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:39:	Parameter 'senderEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:39:	Parameter 'senderName' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:39:	Parameter 'senderPassword' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:39:	Parameter 'smtpPort' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:39:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:40:	Parameter 'smtpAuth' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:40:	Parameter 'smtpTLS' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:69:	Found 'DU'-anomaly for variable 'session' (lines '69'-'76').
+BE/utilities/FileEmailer.java:69:	Found 'DU'-anomaly for variable 'session' (lines '69'-'76').
+BE/utilities/FileEmailer.java:69:	Local variable 'session' could be declared final
+BE/utilities/FileEmailer.java:71:	protectedMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:78:	Parameter 'recipientEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:78:	Parameter 'subject' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:78:	Parameter 'text' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:78:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:80:	Local variable 'session' could be declared final
+BE/utilities/FileEmailer.java:83:	Local variable 'message' could be declared final
+BE/utilities/FileEmailer.java:90:	A method should have only one exit point, and that should be the last statement in the method
+BE/utilities/FileEmailer.java:92:	Avoid printStackTrace(); use a logger call instead.
+BE/utilities/FileEmailer.java:97:	Parameter 'fileLocation' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:97:	Parameter 'recipientEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:97:	Parameter 'subject' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:97:	Parameter 'text' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:97:	Rather than using a lot of String arguments, consider using a container object for those values.
+BE/utilities/FileEmailer.java:97:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:98:	Parameter 'fileName' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:100:	Local variable 'session' could be declared final
+BE/utilities/FileEmailer.java:103:	Local variable 'message' could be declared final
+BE/utilities/FileEmailer.java:109:	Local variable 'multipart' could be declared final
+BE/utilities/FileEmailer.java:112:	Local variable 'source' could be declared final
+BE/utilities/FileEmailer.java:120:	A method should have only one exit point, and that should be the last statement in the method
+BE/utilities/FileEmailer.java:122:	Avoid printStackTrace(); use a logger call instead.
+BE/utilities/FileEmailer.java:128:	Consider using varargs for methods or constructors which take an array the last parameter.
+BE/utilities/FileEmailer.java:128:	Parameter 'files' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:128:	Parameter 'recipientEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:128:	Parameter 'subject' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:128:	Parameter 'text' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:128:	Rather than using a lot of String arguments, consider using a container object for those values.
+BE/utilities/FileEmailer.java:128:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:130:	Local variable 'session' could be declared final
+BE/utilities/FileEmailer.java:133:	Local variable 'message' could be declared final
+BE/utilities/FileEmailer.java:139:	Local variable 'multipart' could be declared final
+BE/utilities/FileEmailer.java:144:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:145:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:145:	Local variable 'source' could be declared final
+BE/utilities/FileEmailer.java:146:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:147:	Potential violation of Law of Demeter (method chain calls)
+BE/utilities/FileEmailer.java:147:	Potential violation of Law of Demeter (method chain calls)
+BE/utilities/FileEmailer.java:155:	A method should have only one exit point, and that should be the last statement in the method
+BE/utilities/FileEmailer.java:157:	Avoid printStackTrace(); use a logger call instead.
+BE/utilities/FileEmailer.java:162:	Parameter 'ccEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:162:	Parameter 'recipientEmail' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:162:	Parameter 'subject' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:162:	Parameter 'text' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:162:	Rather than using a lot of String arguments, consider using a container object for those values.
+BE/utilities/FileEmailer.java:162:	publicMethodCommentRequirement Required
+BE/utilities/FileEmailer.java:163:	Consider using varargs for methods or constructors which take an array the last parameter.
+BE/utilities/FileEmailer.java:163:	Parameter 'files' is not assigned and could be declared final
+BE/utilities/FileEmailer.java:165:	Local variable 'session' could be declared final
+BE/utilities/FileEmailer.java:168:	Local variable 'message' could be declared final
+BE/utilities/FileEmailer.java:175:	Local variable 'multipart' could be declared final
+BE/utilities/FileEmailer.java:180:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:181:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:181:	Local variable 'source' could be declared final
+BE/utilities/FileEmailer.java:182:	Avoid instantiating new objects inside loops
+BE/utilities/FileEmailer.java:183:	Potential violation of Law of Demeter (method chain calls)
+BE/utilities/FileEmailer.java:183:	Potential violation of Law of Demeter (method chain calls)
+BE/utilities/FileEmailer.java:191:	A method should have only one exit point, and that should be the last statement in the method
+BE/utilities/FileEmailer.java:193:	Avoid printStackTrace(); use a logger call instead.
+BE/utilities/InvoiceGenerator.java:12:	headerCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/InvoiceGenerator.java:14:	Perhaps 'pdfTemplate' could be replaced by a local variable.
+BE/utilities/InvoiceGenerator.java:14:	fieldCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/InvoiceGenerator.java:15:	Perhaps 'docCatalog' could be replaced by a local variable.
+BE/utilities/InvoiceGenerator.java:15:	fieldCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/InvoiceGenerator.java:16:	Perhaps 'acroForm' could be replaced by a local variable.
+BE/utilities/InvoiceGenerator.java:16:	fieldCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/InvoiceGenerator.java:17:	Perhaps 'fieldList' could be replaced by a local variable.
+BE/utilities/InvoiceGenerator.java:17:	fieldCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+BE/utilities/InvoiceGenerator.java:18:	Perhaps 'fieldArray' could be replaced by a local variable.
+BE/utilities/InvoiceGenerator.java:18:	fieldCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:20:	Avoid unnecessary constructors - the compiler will generate these for you
+BE/utilities/InvoiceGenerator.java:20:	Document empty constructor
+BE/utilities/InvoiceGenerator.java:20:	publicMethodCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:24:	Found 'UR'-anomaly for variable 'f' (lines '24'-'42').
+BE/utilities/InvoiceGenerator.java:24:	Found 'UR'-anomaly for variable 'sField' (lines '24'-'37').
+BE/utilities/InvoiceGenerator.java:24:	publicMethodCommentRequirement Required
+BE/utilities/InvoiceGenerator.java:35:	Avoid variables with short names like i
+BE/utilities/InvoiceGenerator.java:35:	Found 'DU'-anomaly for variable 'i' (lines '35'-'55').
+BE/utilities/InvoiceGenerator.java:36:	Local variable 'sField' could be declared final
+BE/utilities/InvoiceGenerator.java:37:	Potential violation of Law of Demeter (object not created locally)
+BE/utilities/InvoiceGenerator.java:38:	Found 'DU'-anomaly for variable 'i' (lines '38'-'55').
+BE/utilities/InvoiceGenerator.java:41:	Local variable 'f' could be declared final
+BE/utilities/InvoiceGenerator.java:42:	Avoid unused local variables such as 'field'.
+BE/utilities/InvoiceGenerator.java:42:	Found 'DD'-anomaly for variable 'field' (lines '42'-'42').
+BE/utilities/InvoiceGenerator.java:42:	Found 'DU'-anomaly for variable 'field' (lines '42'-'55').
+BE/utilities/InvoiceGenerator.java:42:	Local variable 'field' could be declared final
+BE/utilities/InvoiceGenerator.java:43:	System.out.println is used
+BE/utilities/InvoiceGenerator.java:51:	Avoid printStackTrace(); use a logger call instead.
+BE/utilities/InvoiceGenerator.java:51:	Potential violation of Law of Demeter (object not created locally)
