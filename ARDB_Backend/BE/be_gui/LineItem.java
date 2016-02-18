@@ -12,18 +12,13 @@ public class LineItem {
 	private String colorCode;
 	private String colorName;
 	private char info1, info2, info3, info4, info5, info6, infoSt;
-	private char inOutMount;
-	private char tilter;
-	private char lift;
-	private char valance;
-	private char holdDown;
-	private char stock;
-	private char wallCeilMount;
 	private int quantity;
 	private float unitPrice;
 	private float extendedPrice;
 	private String line;
-	String sku;
+	private String sku;
+	
+	private char io, mt, val, stk, ctl, ch, tlt, lft, hd;
 	
 	
 	public LineItem(String item) {
@@ -33,12 +28,14 @@ public class LineItem {
 			depCode = Integer.parseInt(item.substring(0,2));
 		} catch(NumberFormatException nfe){
 			depCode = -1;
+		} catch(StringIndexOutOfBoundsException siob){
+			depCode = -1;
 		}
 		
 		try{
 			prodCode = item.substring(2,11).trim();
 		} catch(StringIndexOutOfBoundsException siob){
-			prodCode = null;
+			prodCode = "";
 		}
 		
 		try{
@@ -51,12 +48,15 @@ public class LineItem {
 			width = Float.parseFloat(item.substring(32,38).trim());
 		} catch(NumberFormatException nfe){
 			width = -1;
+		} catch(StringIndexOutOfBoundsException siob){
+			width = -1;
 		}
-		
 		
 		try{
 			length = Float.parseFloat(item.substring(39,45).trim());
 		} catch(NumberFormatException nfe){
+			length = -1;
+		} catch(StringIndexOutOfBoundsException siob){
 			length = -1;
 		}
 		
@@ -114,17 +114,23 @@ public class LineItem {
 			quantity = Integer.parseInt(item.substring(67,72).trim());
 		} catch(NumberFormatException nfe){
 			quantity = 0;
+		} catch(StringIndexOutOfBoundsException siob){
+			quantity = 0;
 		}
 		
 		try{
 			unitPrice = Float.parseFloat(item.substring(71,78).trim());
 		} catch(NumberFormatException nfe){
 			unitPrice = 0;
+		} catch(StringIndexOutOfBoundsException siob){
+			unitPrice = 0;
 		}
 		
 		try{
 			extendedPrice = Float.parseFloat(item.substring(78).trim());
 		} catch(NumberFormatException nfe){
+			extendedPrice = 0;
+		} catch(StringIndexOutOfBoundsException siob){
 			extendedPrice = 0;
 		}
 		
@@ -281,20 +287,99 @@ public class LineItem {
 		
 		//ValuePlus Verticals
 		else if(prodCode.equals("BV-P")){
-			fullDescription = "ValuePlus Verticals";
-			//
-		}
-		
-		//ValuePlus Vertical Louver
-		else if(prodCode.equals("BV-PL")){
+			io = info1;
+			mt = info2;
+			val = info6;
+			
+			if(colorCode.equals("001")){ //White
+				if(val == 'C'){ //Channel Panel
+					fullDescription = "Value Plus Channel Panel Valance " + fixNumber(width);
+					sku = "BV-P" + fixNumber(width) + "CPW";
+				}
+				else if(val == 'D'){ //Dust Cover
+					fullDescription = "Value Plus Dust Cover Valence " + fixNumber(width);
+					sku = "BV-P" + fixNumber(width) + "DCW";
+				}
+				else{ //None
+					fullDescription = "Value Plus Verticals";
+					sku = "BV-P" + fixNumber(width) + "X" + fixNumber(length) + "W";
+				}
+			}
+			else if(colorCode.equals("002")){ //OffWhite
+				if(val == 'C'){ //Channel Panel
+					fullDescription = "Value Plus Channel Panel Valance " + fixNumber(width);
+					sku = "BV-P" + fixNumber(width) + "CPOF";
+				}
+				else if(val == 'D'){ //Dust Cover
+					fullDescription = "Value Plus Dust Cover Valence " + fixNumber(width);
+					sku = "BV-P" + width + "DOF";
+				}
+				else{ //None
+					fullDescription = "Value Plus Verticals";
+					sku = "BV-P" + width + "X" + length + "OF";
+				}
+			}
+			else{
+				unknownProduct();
+			}
+			
 			
 		}
 		
 		//ValuePlus Vertical HeadRail
 		else if(prodCode.equals("BV-PHR")){
+			io = info1;
+			mt = info2;
+			val = info6;
 			
+			if(colorCode.equals("001")){ //White
+				if(val == 'C'){ //Channel Panel
+					fullDescription = "Value Plus Channel Panel Valence";
+					sku = "BV-PHR" + fixNumber(width) + "CPW";
+				}
+				else if(val == 'D'){ //Dust Cover
+					fullDescription = "Value Plus Dust Cover Valence";
+					sku = "BV-PHR" + fixNumber(width) + "DCW";
+				}
+				else{ //None
+					fullDescription = "Value Plus Verticals";
+					sku = "BV-PHR" + fixNumber(width) + "X" + fixNumber(length) + "W";
+				}
+			}
+			else if(colorCode.equals("002")){
+				if(val == 'C'){ //Channel Panel
+					fullDescription = "Value Plus Channel Panel Valence";
+					sku = "BV-PHR" + fixNumber(width) + "CPOF";
+				}
+				else if(val == 'D'){ //Dust Cover
+					fullDescription = "Value Plus Dust Cover Valence";
+					sku = "BV-PHR" + fixNumber(width) + "DCOF";
+				}
+				else{ //None
+					fullDescription = "Value Plus Verticals";
+					sku = "BV-PHR" + fixNumber(width) + "X" + fixNumber(length) + "OF";
+				}
+			}
 		}
 		
+		//ValuePlus Vertical Louver
+		else if(prodCode.equals("BV-PL")){
+			if(colorCode.equals("001")){
+				fullDescription = "Value Plus Vertical Louvers";
+				sku = "BV-PL" + fixNumber(length) + "W";
+			}
+			else if(colorCode.equals("002")){
+				fullDescription = "Value Plus Vertical Louvers";
+				sku = "BV-PL" + fixNumber(length) + "OF";
+			}
+			else{
+				unknownProduct();
+			}
+		}
+		
+		else{
+			unknownProduct();
+		}
 	}
 
 	private String getColor(String code) {

@@ -210,7 +210,7 @@ public class EditHandler extends ServicePanelInd {
 				es.add(e);
 			}
 		}
-		updateDB(es);
+		//updateDB(es);
 		
 	}
 	
