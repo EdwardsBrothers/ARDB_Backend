@@ -34,6 +34,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		invGen = new InvoiceGenerator();
 		
 		//invoiceFilePath = "Z:\\CCINV";
+		invoiceFilePath = "CCINV";
 		currentInvoiceFile = new File(invoiceFilePath);
 		currentInvoiceTimeStamp = currentInvoiceFile.lastModified();
 		
@@ -57,23 +58,14 @@ public class InvoiceHandler extends ServicePanelInd {
 			while(scan.hasNext()){
 				Invoice i = new Invoice(scan.next());
 				invoices.add(i);				
-				if(i.isElectronic()){
-					electronic.add(i);
-				}
+				
 			}
-			
-			processElectronicInvoices(electronic);
 			scan.close();		
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
-	}
-	
-	private String processElectronicInvoices(ArrayList<Invoice> invoices){
-		
-		return null;
 	}
 	
 	
