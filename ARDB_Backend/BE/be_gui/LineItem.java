@@ -17,9 +17,10 @@ public class LineItem {
 	private float extendedPrice;
 	private String line;
 	private String sku;
+	private String uom;
 	
 	private char io, mt, val, stk, ctl, ch, tlt, lft, hd;
-	
+
 	
 	public LineItem(String item) {
 		line = item;
@@ -380,6 +381,8 @@ public class LineItem {
 		else{
 			unknownProduct();
 		}
+		
+		uom = "ea";
 	}
 
 	private String getColor(String code) {
@@ -406,15 +409,15 @@ public class LineItem {
 		return 0;
 	}
 
-	/*
+	
 	  public String generateSQLQuery(){
 	 
 		String qry = "";
 		
-		qry = qry + "'" + productStyleName + "'" + ", "+ "'"  + sku + "'" + ", " + quantity + ", " + "'" + uom + "'" + ", " + unitPrice + ", " + extendedPrice + ")";
+		qry = qry + "'" + fullDescription + "'" + ", "+ "'"  + sku + "'" + ", " + quantity + ", " + "'" + uom + "'" + ", " + unitPrice + ", " + extendedPrice + ")";
 
 		return qry;
 	}
-	*/
+	
 
 }

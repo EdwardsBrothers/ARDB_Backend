@@ -208,7 +208,7 @@ public class Edit implements Printable{
 		
 		billStreet = ""; billCity = ""; billState = ""; billZip = ""; shipStreet = ""; shipCity = ""; shipState = ""; shipZip = "";
 		parseAddress();
-		//parseLineItems();
+		parseLineItems();
 	}
 
 	private boolean parseLineItems(){

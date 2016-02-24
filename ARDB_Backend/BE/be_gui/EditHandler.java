@@ -251,7 +251,7 @@ public class EditHandler extends ServicePanelInd {
 				
 				for(LineItem li : e.getLiList() ){
 					if(li.getNumCode() >= 0) {
-						//qs = base + li.generateSQLQuery();
+						qs = base + li.generateSQLQuery();
 						stmt = con.createStatement();
 						stmt.executeUpdate(qs);
 						qs = "";
