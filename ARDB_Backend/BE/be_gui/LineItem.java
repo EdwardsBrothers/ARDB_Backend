@@ -279,11 +279,13 @@ public class LineItem {
 		//Econoblinds
 		else if(prodCode.equals("BEB")){
 			fullDescription = "Econoblinds";
+			sku = "Enter Manually";
 		}
 		
 		//Classic Blinds
 		else if(prodCode.equals("BCL")){
 			fullDescription = "Classic Blinds";
+			sku = "Enter Manually";
 		}
 		
 		//ValuePlus Verticals
