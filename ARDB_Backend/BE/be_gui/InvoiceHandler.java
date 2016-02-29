@@ -26,6 +26,7 @@ public class InvoiceHandler extends ServicePanelInd {
 	private InvoiceGenerator invGen;
 	private SimpleDateFormat sdf;
 	private InvoiceListener il;
+	private Pinger pinger;
 	
 	
 	public InvoiceHandler() {
@@ -33,8 +34,11 @@ public class InvoiceHandler extends ServicePanelInd {
 		sdf = new SimpleDateFormat("MM-dd-yy kk:mm");
 		invoiceEmailer = new FileEmailer();
 		il = new InvoiceListener();
+		pinger = new Pinger();
 		timer = new Timer(27777, il);
 		invGen = new InvoiceGenerator();
+		
+		btnPing.addActionListener(pinger);
 		
 		invoiceFilePath = "Z:\\CCINV";
 		currentInvoiceFile = new File(invoiceFilePath);
@@ -77,7 +81,7 @@ public class InvoiceHandler extends ServicePanelInd {
 	
 	private void processElectronic(ArrayList<Invoice> electronic) {
 		
-		//eSupply(electronic);
+		eSupply(electronic);
 		
 		//goldmark(electronic);
 		
@@ -89,7 +93,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		String qs = "";
 		
 		try{
-			String dbConnect = "jdbc:mysql://localhost:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
+			String dbConnect = "jdbc:mysql://10.36.40.250:3306/ardb?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
 			Connection con = null;
 			Statement stmt = null;
 			//
@@ -100,7 +104,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		
 			for(Invoice i : electronic){
 				if(i.getManagementCode().equals("ES")){
-					qs = "UPDATE orders SET INVOICE_NUMBER= \'" + i.getInvoiceNumber() + "\' , INVOICE_DATE= \'" + i.getInvoiceDate() + "\' , SHIP_DATE= \'"
+					qs = "UPDATE esupply SET INVOICE_NUMBER= \'" + i.getInvoiceNumber() + "\' , INVOICE_DATE= \'" + i.getInvoiceDate() + "\' , SHIP_DATE= \'"
 							+ i.getInvoiceDate() + "\' WHERE ORDER_NUMBER= \'" + i.getCutNumber() + "\';";
 					stmt = con.createStatement();
 					stmt.executeUpdate(qs);
@@ -130,7 +134,15 @@ public class InvoiceHandler extends ServicePanelInd {
 			}
 			
 		}
-		
 	}
-
+		
+	private class Pinger implements ActionListener{
+			@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getSource().equals(btnPing)){
+				parseInvoices(currentInvoiceFile);
+			}
+		}
+	}
 }

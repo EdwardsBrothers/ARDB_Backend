@@ -220,7 +220,7 @@ public class EditHandler extends ServicePanelInd {
 		// PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE
 		
 		try{
-			String dbConnect = "jdbc:mysql://10.36.40.250:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
+			String dbConnect = "jdbc:mysql://10.36.40.250:3306/ardb?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
 			Connection con = null;
 			Statement stmt = null;
 			//
@@ -231,7 +231,7 @@ public class EditHandler extends ServicePanelInd {
 			
 			String qs = "";
 			for(Edit e : es){
-				qs = qs + "INSERT INTO orders (MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, "
+				qs = qs + "INSERT INTO esupply (MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, "
 						+ "PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE) values (";
 			
 				String mgmt = e.getManagementCo();
