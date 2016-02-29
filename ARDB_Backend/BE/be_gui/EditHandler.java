@@ -175,9 +175,9 @@ public class EditHandler extends ServicePanelInd {
 			fileCount++;
 		}
 
-		//editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
+		editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
 		
-		//printEdits(all);
+		printEdits(all);
 		
 		checkESupply(all);
 	}
