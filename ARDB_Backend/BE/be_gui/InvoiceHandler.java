@@ -63,10 +63,13 @@ public class InvoiceHandler extends ServicePanelInd {
 			scan.next();
 			while(scan.hasNext()){
 				Invoice i = new Invoice(scan.next());
-				invoices.add(i);		
-				if(i.isElectronic()){
-					electronic.add(i);
+				if(i.checkValid()){
+					invoices.add(i);		
+					if(i.isElectronic()){
+						electronic.add(i);
+					}
 				}
+		
 				
 			}
 			scan.close();		

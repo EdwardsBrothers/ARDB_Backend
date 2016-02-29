@@ -2,26 +2,36 @@ package be_gui;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Invoice {
 	
 	private int cutNumber;
-	private String invoiceDate;
+	private Date invoiceDate;
 	private String invoiceNumber;
 	private String managementCode;
 	private String managementCompanyName;
 	private boolean electronic;
+	private boolean valid;
 
 	public Invoice(String invoice){
 		String currentLine = "";
-		int lineNum = 1;
+		int lineNum = 0;
 		electronic = false;
 		boolean running = true;
+		valid = true;
+		invoiceDate = new Date();
 		
 		Scanner scan = new Scanner(invoice);
 		while(running){
-			currentLine = scan.nextLine();
+			try{
+							currentLine = scan.nextLine();
+			}catch(NoSuchElementException nsee){
+				running = false;
+				valid = false;
+			}
+
 			if(currentLine.contains("$") || currentLine.contains("%")){
 				lineNum--;
 			}
@@ -30,14 +40,12 @@ public class Invoice {
 				managementCode = currentLine.trim();
 			}
 			if(lineNum == 11){//date & invoice number
-				invoiceDate = currentLine.substring(33,42).trim();
-				//convert to date
-				invoiceNumber = currentLine.substring(77,84);
+				invoiceNumber = currentLine.substring(75);
 			}
 			
 			if(currentLine.contains("NONTAXABLE")){
 				currentLine = scan.nextLine();
-				cutNumber = Integer.parseInt(currentLine.substring(3,9));
+				cutNumber = Integer.parseInt(currentLine.substring(1,8));
 				running = false;
 			}
 			
@@ -47,9 +55,7 @@ public class Invoice {
 			
 			lineNum++;
 		}
-		
-		
-		
+
 		
 	}
 
@@ -77,11 +83,11 @@ public class Invoice {
 		this.cutNumber = cutNumber;
 	}
 
-	public String getInvoiceDate() {
+	public Date getInvoiceDate() {
 		return invoiceDate;
 	}
 
-	public void setInvoiceDate(String invoiceDate) {
+	public void setInvoiceDate(Date invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
@@ -93,5 +99,13 @@ public class Invoice {
 		this.invoiceNumber = invoiceNumber;
 	}
 	
+	public boolean checkValid(){
+		return valid;
+	}
+	
+	public java.sql.Date getsqlOrderDate() {
+		return new java.sql.Date(invoiceDate.getTime());
+	}
+
 	
 }

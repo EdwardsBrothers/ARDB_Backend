@@ -22,18 +22,6 @@ import java.util.Scanner;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-
-
-
-
-
-
-
-
-
-
-
-
 import utilities.FileEmailer;
 
 public class EditHandler extends ServicePanelInd {
