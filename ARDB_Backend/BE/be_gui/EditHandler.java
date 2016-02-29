@@ -175,11 +175,11 @@ public class EditHandler extends ServicePanelInd {
 			fileCount++;
 		}
 
-		//editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
+		editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
 		
-		//printEdits(all);
+		printEdits(all);
 		
-		//checkESupply(all);
+		checkESupply(all);
 	}
 	
 	private void printEdits(ArrayList<Edit> all){
@@ -210,7 +210,7 @@ public class EditHandler extends ServicePanelInd {
 				es.add(e);
 			}
 		}
-		//updateDB(es);
+		updateDB(es);
 		
 	}
 	
