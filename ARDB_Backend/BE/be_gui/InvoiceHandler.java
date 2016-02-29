@@ -89,7 +89,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		String qs = "";
 		
 		try{
-			String dbConnect = "jdbc:mysql://10.36.40.250:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
+			String dbConnect = "jdbc:mysql://localhost:3306/esupply?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
 			Connection con = null;
 			Statement stmt = null;
 			//
