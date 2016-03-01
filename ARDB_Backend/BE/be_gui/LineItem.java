@@ -34,19 +34,19 @@ public class LineItem {
 		}
 		
 		try{
-			prodCode = item.substring(2,11).trim();
+			prodCode = item.substring(2,10).trim();
 		} catch(StringIndexOutOfBoundsException siob){
 			prodCode = "";
 		}
 		
 		try{
-			procommText = item.substring(12,30);
+			procommText = item.substring(10,30);
 		} catch(StringIndexOutOfBoundsException siob){
-			procommText = "******";
+			procommText = "";
 		}
 		
 		try{
-			width = Float.parseFloat(item.substring(32,38).trim());
+			width = Float.parseFloat(item.substring(30,37).trim());
 		} catch(NumberFormatException nfe){
 			width = -1;
 		} catch(StringIndexOutOfBoundsException siob){
@@ -54,7 +54,7 @@ public class LineItem {
 		}
 		
 		try{
-			length = Float.parseFloat(item.substring(39,45).trim());
+			length = Float.parseFloat(item.substring(37,43).trim());
 		} catch(NumberFormatException nfe){
 			length = -1;
 		} catch(StringIndexOutOfBoundsException siob){
@@ -106,13 +106,13 @@ public class LineItem {
 		}
 		
 		try{
-			infoSt = item.charAt(65);
+			infoSt = item.charAt(63);
 		} catch(Exception e){
 			infoSt= '*';
 		}
 		
 		try{
-			quantity = Integer.parseInt(item.substring(67,72).trim());
+			quantity = Integer.parseInt(item.substring(65,69).trim());
 		} catch(NumberFormatException nfe){
 			quantity = 0;
 		} catch(StringIndexOutOfBoundsException siob){
@@ -120,7 +120,7 @@ public class LineItem {
 		}
 		
 		try{
-			unitPrice = Float.parseFloat(item.substring(71,78).trim());
+			unitPrice = Float.parseFloat(item.substring(70,76).trim());
 		} catch(NumberFormatException nfe){
 			unitPrice = 0;
 		} catch(StringIndexOutOfBoundsException siob){
@@ -128,7 +128,7 @@ public class LineItem {
 		}
 		
 		try{
-			extendedPrice = Float.parseFloat(item.substring(78).trim());
+			extendedPrice = Float.parseFloat(item.substring(76).trim());
 		} catch(NumberFormatException nfe){
 			extendedPrice = 0;
 		} catch(StringIndexOutOfBoundsException siob){
@@ -404,11 +404,12 @@ public class LineItem {
 	}
 
 	private void unknownProduct() {
-		
+		sku = prodCode + "-ERROR";
+		fullDescription = "Look up SKU";
 	}
 	
 	public int getNumCode(){
-		return 0;
+		return depCode;
 	}
 
 	

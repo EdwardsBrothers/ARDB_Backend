@@ -118,7 +118,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		}
 			
 		catch(Exception e){
-			
+			lblStatus.setText("BROKEN!!!!!!!");
 		}
 		
 	}
@@ -133,6 +133,7 @@ public class InvoiceHandler extends ServicePanelInd {
 			if(tempTimeStamp != currentInvoiceTimeStamp){
 				currentInvoiceFile = tempFile;
 				currentInvoiceTimeStamp = currentInvoiceFile.lastModified();
+				updateTime();
 				parseInvoices(currentInvoiceFile);
 			}
 			

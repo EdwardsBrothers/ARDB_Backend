@@ -3,6 +3,8 @@ package be_gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -55,6 +57,11 @@ public abstract class ServicePanelInd extends JPanel {
 		btnPing.setPreferredSize(new Dimension(75,25));
 		add(btnPing);
 
+	}
+	
+	protected void updateTime(){
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yy kk:mm");
+		lblLastUpdate.setText(sdf.format(new Date()));
 	}
 
 }

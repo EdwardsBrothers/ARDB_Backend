@@ -251,6 +251,7 @@ public class EditHandler extends ServicePanelInd {
 			
 		}catch(Exception e){
 			e.printStackTrace();
+			lblStatus.setText("SQL EDIT ERROR!!!!!");
 		}
 
 	}
@@ -282,8 +283,10 @@ public class EditHandler extends ServicePanelInd {
 			if (tempTimeStamp != currentEditTimeStamp) {
 				currentEditFile = new File(editFilePath);
 				currentEditTimeStamp = currentEditFile.lastModified();
-
+				updateTime();
+				
 				parseEdits(tempFile);
+				
 
 			}
 
