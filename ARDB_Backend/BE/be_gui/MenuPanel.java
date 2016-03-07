@@ -13,7 +13,7 @@ import javax.swing.border.MatteBorder;
 
 public class MenuPanel extends JPanel {
 
-	private JButton btnServices, btnESupply, btnGoldmark, btnNewButton_1;
+	private JButton btnServices, btnNewButton_1;
 
 	/**
 	 * Create the panel.
@@ -34,14 +34,6 @@ public class MenuPanel extends JPanel {
 		btnServices = new JButton("Services");
 		btnServices.setPreferredSize(new Dimension(100, 25));
 		add(btnServices);
-
-		btnESupply = new JButton("E Supply");
-		btnESupply.setPreferredSize(new Dimension(100, 25));
-		add(btnESupply);
-
-		btnGoldmark = new JButton("Goldmark");
-		btnGoldmark.setPreferredSize(new Dimension(100, 25));
-		add(btnGoldmark);
 
 		btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.setPreferredSize(new Dimension(100, 25));

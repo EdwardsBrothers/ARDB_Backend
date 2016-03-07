@@ -9,10 +9,7 @@ import javax.swing.border.MatteBorder;
 public class ServicePanel extends JPanel {
 
 	private EditHandler editHandler;
-	private CutHandler cutHandler;
 	private InvoiceHandler invoiceHandler;
-	private GoldmarkHandler goldmarkHandler;
-	private ESupplyHandler eSupplyHandler;
 	private NightlyReportEmailer nightlyReportEmailer;
 	private ItemHistoryHandler itemHistoryHandler;
 	
@@ -31,18 +28,9 @@ public class ServicePanel extends JPanel {
 		editHandler = new EditHandler();
 		add(editHandler);
 
-		cutHandler = new CutHandler();
-		add(cutHandler);
-
 		invoiceHandler = new InvoiceHandler();
 		add(invoiceHandler);
 		
-		goldmarkHandler = new GoldmarkHandler();
-		add(goldmarkHandler);
-		
-		eSupplyHandler = new ESupplyHandler();
-		add(eSupplyHandler);
-
 		nightlyReportEmailer = new NightlyReportEmailer();
 		add(nightlyReportEmailer);
 

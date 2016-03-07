@@ -40,7 +40,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		
 		btnPing.addActionListener(pinger);
 		
-		invoiceFilePath = "Z:\\CCINV";
+		invoiceFilePath = "invTest"; //"Z:\\CCINV";
 		currentInvoiceFile = new File(invoiceFilePath);
 		currentInvoiceTimeStamp = currentInvoiceFile.lastModified();
 		
@@ -77,13 +77,14 @@ public class InvoiceHandler extends ServicePanelInd {
 			e.printStackTrace();
 		}
 		
-		processElectronic(electronic);
+		processElectronic(electronic);		
+		eSupply(invoices);
 	}
 	
 	
 	private void processElectronic(ArrayList<Invoice> electronic) {
 		
-		eSupply(electronic);
+
 		
 		//goldmark(electronic);
 		
@@ -106,8 +107,8 @@ public class InvoiceHandler extends ServicePanelInd {
 		
 			for(Invoice i : electronic){
 				if(i.getManagementCode().equals("ES")){
-					qs = "UPDATE esupply SET INVOICE_NUMBER= \'" + i.getInvoiceNumber() + "\' , INVOICE_DATE= \'" + i.getInvoiceDate() + "\' , SHIP_DATE= \'"
-							+ i.getInvoiceDate() + "\' WHERE ORDER_NUMBER= \'" + i.getCutNumber() + "\';";
+					qs = "UPDATE ardb.esupply SET INVOICE_NUMBER= \'" + i.getInvoiceNumber() + "\' , INVOICE_DATE= \'" + i.getsqlOrderDate() + "\' , SHIP_DATE= \'"
+							+ i.getsqlOrderDate() + "\' WHERE ORDER_NUMBER= \'" + i.getCutNumber() + "\';";
 					stmt = con.createStatement();
 					stmt.executeUpdate(qs);
 					qs = "";
