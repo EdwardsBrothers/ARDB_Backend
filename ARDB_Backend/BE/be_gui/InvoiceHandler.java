@@ -69,8 +69,7 @@ public class InvoiceHandler extends ServicePanelInd {
 						electronic.add(i);
 					}
 				}
-		
-				
+						
 			}
 			scan.close();		
 		} catch (FileNotFoundException e) {
@@ -115,6 +114,7 @@ public class InvoiceHandler extends ServicePanelInd {
 
 				}
 			}
+			
 		}
 			
 		catch(Exception e){

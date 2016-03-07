@@ -24,36 +24,40 @@ public class Invoice {
 		invoiceDate = new Date();
 		
 		Scanner scan = new Scanner(invoice);
-		while(running){
-			try{
-							currentLine = scan.nextLine();
-			}catch(NoSuchElementException nsee){
-				running = false;
-				valid = false;
-			}
+		try {
+			while (running) {
+				try {
+					currentLine = scan.nextLine();
+				} catch (NoSuchElementException nsee) {
+					running = false;
+					valid = false;
+				}
 
-			if(currentLine.contains("$") || currentLine.contains("%")){
-				lineNum--;
-			}
-			
-			if(lineNum == 9){//mgt code
-				managementCode = currentLine.trim();
-			}
-			if(lineNum == 11){//date & invoice number
-				invoiceNumber = currentLine.substring(75);
-			}
-			
-			if(currentLine.contains("NONTAXABLE")){
-				currentLine = scan.nextLine();
-				cutNumber = Integer.parseInt(currentLine.substring(1,8));
-				running = false;
-			}
-			
-			if(currentLine.contains("S E N D    E L E C T R O N I C A L L Y")){
-				electronic = true;
-			}
-			
-			lineNum++;
+				if (currentLine.contains("$") || currentLine.contains("%")) {
+					lineNum--;
+				}
+
+				if (lineNum == 9) {//mgt code
+					managementCode = currentLine.trim();
+				}
+				if (lineNum == 11) {//date & invoice number
+					invoiceNumber = currentLine.substring(75);
+				}
+
+				if (currentLine.contains("NONTAXABLE")) {
+					currentLine = scan.nextLine();
+					cutNumber = Integer.parseInt(currentLine.substring(1, 8));
+					running = false;
+				}
+
+				if (currentLine.contains("S E N D    E L E C T R O N I C A L L Y")) {
+					electronic = true;
+				}
+
+				lineNum++;
+			} 
+		} catch (Exception e) {
+			System.out.println("BAD INVOICE");
 		}
 
 		
