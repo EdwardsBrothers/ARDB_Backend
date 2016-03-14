@@ -393,14 +393,14 @@ public class LineItem {
 	}
 
 	private String fixNumber(float n) {
-		DecimalFormat df = new DecimalFormat("###");
+		DecimalFormat df = new DecimalFormat("###.##");
 		double r = n;
 		if(n % 1 != 0){
 			double d = n % 1;
 			double m = Math.floor(n);
 			r = m + (d*5./4);
 		}
-		return r + "";
+		return df.format(r) + "";
 	}
 
 	private void unknownProduct() {

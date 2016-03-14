@@ -40,7 +40,7 @@ public class InvoiceHandler extends ServicePanelInd {
 		
 		btnPing.addActionListener(pinger);
 		
-		invoiceFilePath = "invTest"; //"Z:\\CCINV";
+		invoiceFilePath = "Z:\\CCINV";
 		currentInvoiceFile = new File(invoiceFilePath);
 		currentInvoiceTimeStamp = currentInvoiceFile.lastModified();
 		
