@@ -1,5 +1,7 @@
 package be_gui;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.NoSuchElementException;
@@ -58,6 +60,15 @@ public class Invoice {
 			} 
 		} catch (Exception e) {
 			System.out.println("BAD INVOICE");
+			try {
+				PrintWriter pw = new PrintWriter("errors.txt");
+				pw.write("Bad Invoice: \n");
+				pw.write(invoice);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 		}
 
 		
