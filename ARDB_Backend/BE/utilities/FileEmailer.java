@@ -28,7 +28,7 @@ public class FileEmailer {
 		senderName = "Billing Services";
 		senderEmail = "ar@mariettadrapery.com";
 		senderPassword = "K@thy2222";
-		emailHost = "m38.siteground.biz";
+		emailHost = "mariettadrapery.com";
 		smtpPort = 25;
 		smtpAuth = "true";
 		smtpTLS = "false";

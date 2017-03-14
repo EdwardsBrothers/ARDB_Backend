@@ -1,5 +1,16 @@
-package be_gui;
+package simplified_applications;
 
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JLabel;
+
+import java.awt.FlowLayout;
+
+import javax.swing.SwingConstants;
+
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.print.PageFormat;
@@ -9,55 +20,92 @@ import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JButton;
 import javax.swing.Timer;
 
+import be_gui.Edit;
 import utilities.FileEmailer;
 
-public class EditHandler extends ServicePanelInd {
-
-	private String editFilePath;
-	private File currentEditFile;
-	private long currentEditTimeStamp;
-	private FileEmailer editEmailer;
+public class EditPrinterPanel extends JPanel {
+	
+	private JButton pingButton;
+	private int editsPrinted;
+	private String dateText;
+	private Timer timer;
+	private EditPrintListener epl;
 	private SimpleDateFormat sdf;
-	
-	private EditListener el;
-	private Pinger ping;
+		
+	private String editFilePath;
+	private File currentEditFile, tempEditFile;
+	private long currentEditTimeStamp, tempEditTimeStamp;
+	private ArrayList<Edit> currentEdits;
+	private JLabel lblEditNumber, lblEditTime;
+		
+	private FileEmailer editSender;
 
-	public EditHandler() {
-		super("Edits");
-	
-		sdf = new SimpleDateFormat("MM-dd-yy kk:mm");
-		editEmailer = new FileEmailer();
-		el = new EditListener();
-		timer = new Timer(34564, el);
-
+	/**
+	 * Create the panel.
+	 */
+	public EditPrinterPanel() {
+		epl = new EditPrintListener();
+		timer = new Timer(24943, epl);
+		timer.start();
+		
 		editFilePath = "Z:\\AAPRINT-EDIT";
 		currentEditFile = new File(editFilePath);
 		currentEditTimeStamp = currentEditFile.lastModified();
-
-		timer.start();
-		lblStatus.setText("Running");
-		lblLastUpdate.setText(sdf.format(new Date()));
 		
-		ping = new Pinger();
-		btnPing.addActionListener(ping);
-
-
+		tempEditFile = new File(editFilePath);
+		tempEditTimeStamp = tempEditFile.lastModified();
+		
+		editSender = new FileEmailer();
+		
+		setLayout(new BorderLayout(0, 0));
+		sdf = new SimpleDateFormat("hh:mm");
+		
+		dateText = sdf.format(new Date());
+		
+		JPanel TextPanel = new JPanel();
+		add(TextPanel, BorderLayout.NORTH);
+		TextPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblEditsLastPrinted = new JLabel("Edits Last Printed:");
+		lblEditsLastPrinted.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
+		TextPanel.add(lblEditsLastPrinted);
+		
+		lblEditTime = new JLabel(dateText);
+		lblEditTime.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		TextPanel.add(lblEditTime);
+		
+		JSeparator separator = new JSeparator();
+		TextPanel.add(separator);
+		
+		JLabel lblEditsPrinted = new JLabel("Edits Printed:");
+		lblEditsPrinted.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
+		TextPanel.add(lblEditsPrinted);
+		
+		lblEditNumber = new JLabel("" + editsPrinted);
+		lblEditNumber.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		TextPanel.add(lblEditNumber);
+		
+		JPanel ButtonPanel = new JPanel();
+		add(ButtonPanel, BorderLayout.SOUTH);
+		
+		pingButton = new JButton("Print Current");
+		pingButton.addActionListener(epl);
+		ButtonPanel.add(pingButton);
+		
+		editSender = new FileEmailer();
+		
 	}
-
-	private void parseEdits(File file) {
+	
+	private void parseEdits(){
 		ArrayList<Edit> all, credit, creditCard, changeOrder;
 		all = new ArrayList<Edit>();
 		credit = new ArrayList<Edit>();
@@ -65,7 +113,7 @@ public class EditHandler extends ServicePanelInd {
 		changeOrder = new ArrayList<Edit>();
 
 		try {
-			Scanner scan = new Scanner(file);
+			Scanner scan = new Scanner(currentEditFile);
 			scan.useDelimiter(new String(new char[] { 12 }));
 			while (scan.hasNext()) {
 				Edit e = new Edit(scan.next());
@@ -162,15 +210,13 @@ public class EditHandler extends ServicePanelInd {
 			attachments[fileCount][1] = "change order.rtf";
 			fileCount++;
 		}
-
-		editEmailer.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
 		
-		printEdits(all);
+		editSender.sendEmailWithAttachment(recipient, ccRecipient, subject, body, attachments);
 		
-		checkESupply(all);
+		currentEdits = all;
 	}
 	
-	private void printEdits(ArrayList<Edit> all){
+	private void printEdits(){
 		
 		PrinterJob pj = PrinterJob.getPrinterJob();
 		PageFormat pf = pj.defaultPage();
@@ -180,7 +226,7 @@ public class EditHandler extends ServicePanelInd {
 		paper.setImageableArea(margin, margin, paper.getWidth() - (2 * margin), paper.getHeight() - (2 * margin));
 				
 		pf.setPaper(paper);
-		for (Edit e : all){
+		for (Edit e : currentEdits){
 			pj.setPrintable(e,  pf);
 			try{
 				pj.print();
@@ -189,73 +235,8 @@ public class EditHandler extends ServicePanelInd {
 			}
 		}
 	}
-
-	private void checkESupply(ArrayList<Edit> all) {
-		ArrayList<Edit> es = new ArrayList<Edit>();
-		
-		for(Edit e : all){
-			if(e.getManagementCo().trim().equals("ES")){
-				es.add(e);
-			}
-		}
-		updateDB(es);
-		
-	}
 	
-	private void updateDB(ArrayList<Edit> es){
-		
-		// MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, INVOICE_NUMBER, INVOICE_DATE, SHIP_DATE,
-		// PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE
-		
-		try{
-			String dbConnect = "jdbc:mysql://10.36.40.250:3306/ardb?autoReconnect=true&useSSL=false&user=jedwards&password=terran";
-			Connection con = null;
-			Statement stmt = null;
-			//
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(dbConnect);
-			System.out.println("connected");
-			
-			
-			String qs = "";
-			for(Edit e : es){
-				qs = qs + "INSERT INTO esupply (MGMT_CO_NAME, PROPERTY_ACCT, PROPERTY_NAME, ADDRESS, CITY, STATE, ZIP, ORDER_NUMBER, PO_NUMBER, ORDER_DATE, "
-						+ "PURCHASE_TYPE_NAME, SKU, QUANTITY, UOM, UNIT_PRICE, EXTENDED_PRICE) values (";
-			
-				String mgmt = e.getManagementCo();
-				String propAcc = e.getCustomerID();
-				String propName = e.getShipOne();
-				String add = e.getShipStreet();
-				String city = e.getShipCity();
-				String state = e.getShipState();
-				String zip = e.getShipZip();
-				int ordNum = e.getCutNumber();
-				String poNum = e.getPo();
-				java.sql.Date orderDate = e.getsqlOrderDate();
-				
-				qs = qs + "'" + mgmt + "'" + ", " + "'" + propAcc+ "'" + ", " + "'" + propName + "'" + ", " + "'" + add + "'" + ", " + "'" + city + "'"
-				+ ", " +"'" + state + "'" + ", " + "'" + zip + "'" + ", " + ordNum + ", " + "'" + poNum + "'" + ", " + "'" + orderDate + "'" + ", ";
-				String base = qs;
-				
-				for(LineItem li : e.getLiList() ){
-					if(li.getNumCode() >= 0) {
-						qs = base + li.generateSQLQuery();
-						stmt = con.createStatement();
-						stmt.executeUpdate(qs);
-						qs = "";
-					}
-
-				}
-			}
-
-			
-		}catch(Exception e){
-			e.printStackTrace();
-			lblStatus.setText("SQL EDIT ERROR!!!!!");
-		}
-
-	}
-
+	
 	private File createEditFile(ArrayList<Edit> editList, String name) {
 		if (!editList.isEmpty()) {
 			File editFile = new File(name);
@@ -273,34 +254,32 @@ public class EditHandler extends ServicePanelInd {
 		}
 		return null;
 	}
-
-	private class EditListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			File tempFile = new File(editFilePath);
-			long tempTimeStamp = tempFile.lastModified();
-			if (tempTimeStamp != currentEditTimeStamp) {
-				currentEditFile = new File(editFilePath);
-				currentEditTimeStamp = currentEditFile.lastModified();
-				updateTime();
-				
-				parseEdits(tempFile);
-				
-
-			}
-
-		}
-
-	}
 	
-	private class Pinger implements ActionListener{
+
+	
+	private class EditPrintListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			if(e.getSource().equals(btnPing)){
-				parseEdits(currentEditFile);
+			if((e.getSource().equals(pingButton)) || checkNewEdits()){
+				parseEdits();
+				printEdits();
+				lblEditTime.setText(sdf.format(new Date()));
+				lblEditNumber.setText(currentEdits.size() + "");
+			}
+						
+		}
+		
+		private boolean checkNewEdits(){
+			File tempEditFile = new File(editFilePath);
+			long tempTimeStamp = tempEditFile.lastModified();
+			if(tempTimeStamp != currentEditTimeStamp){
+				currentEditFile = tempEditFile;
+				currentEditTimeStamp = tempTimeStamp;
+				return true;
+			}
+			else{
+				return false;
 			}
 		}
 		
