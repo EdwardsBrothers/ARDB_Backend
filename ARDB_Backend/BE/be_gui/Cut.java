@@ -15,6 +15,7 @@ public class Cut {
 	
 	public Cut(String cutString){
 		scan = new Scanner(cutString);
+		shades = new ArrayList<Shade>();
 		
 		if(cutString.contains("SOLAR")){
 			cutType = "shade";
@@ -32,6 +33,7 @@ public class Cut {
 		int lineNumber = 0;
 		int stringLength = 0;
 		String line = "";
+		
 		
 			//HEADER
 		while(scan.hasNextLine() && lineNumber < 9){
@@ -53,12 +55,12 @@ public class Cut {
 			
 			case 4:
 				//customername
-				if(stringLength < 55){
+				if(stringLength < 53){
 					cutType = "N";
 					break;
 				}
 				customerName = line.substring(2,34).trim();
-				shippingMethod = line.substring(55).trim();				
+				shippingMethod = line.substring(53).trim();				
 				break;
 								
 			case 6:
@@ -95,17 +97,24 @@ public class Cut {
 		
 		if(cutType.equals("shade")){
 			lineNumber = 0;
-			String shadeHeader = "TYP    DESCRIPTION  QTY  IO  WDTH X LGTH  SYSTM CNTRL FABRI FASICA F-HGT F-CLR HEM H-CLR";
-			
+			String shadeHeader = " TYP    DESCRIPTION  QTY  IO  WDTH X LGTH  SYSTM CNTRL FABRI FASICA F-HGT F-CLR HEM H-CLR";
+			scan.nextLine();
+			line = scan.nextLine();
 			while(scan.hasNextLine()){
-				line = scan.nextLine();
 				if(line.equals(shadeHeader)){
 					line = scan.nextLine();
 					Shade s = new Shade(line);
-					
-					
+					line = scan.nextLine();
+					while(!line.equals(shadeHeader) && scan.hasNextLine()){
+						s.addDetail(line);
+						line = scan.nextLine();
+					}
+					shades.add(s);
 				}
+				
 			}
+			
+
 			
 		}
 		

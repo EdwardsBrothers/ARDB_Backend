@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import be_gui.Cut;
 import utilities.FileEmailer;
 import javax.swing.JButton;
@@ -32,6 +34,7 @@ public class ShadeCutPanel extends JPanel {
 	private File currentCustomCutFile, tempCustomCutFile;
 	private long currentCustomCutTimeStamp, tempCustomCutTimeStamp;
 	private ArrayList<Cut> currentCustomCuts, currentShadeCuts;
+	private XSSFWorkbook currentWorkbook;
 	private JLabel lblCustomCutTime, lblShadeCuts;
 	
 	private FileEmailer cutSender;
@@ -108,18 +111,24 @@ public class ShadeCutPanel extends JPanel {
 			e.printStackTrace();
 		}
 	}
+	
+	private void generateExcel(){
+		
+
+		
+	}
 		
 		
-		private class ShadeCutPanelListener implements ActionListener {
+	private class ShadeCutPanelListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource().equals(btnPinger)){
-				parseCuts(currentCustomCutFile);
+			parseCuts(currentCustomCutFile);
 			}
 			
 		}
 		
 	}
 		
-	}
+}

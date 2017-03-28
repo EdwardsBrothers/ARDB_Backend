@@ -8,6 +8,7 @@ import java.util.Date;
 
 import javax.swing.Timer;
 
+import Archive.ServicePanelInd;
 import utilities.FileEmailer;
 
 class NightlyReportEmailer extends ServicePanelInd {

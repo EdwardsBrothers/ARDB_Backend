@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 import javax.swing.text.JTextComponent;
 
+import Archive.LineItem;
+
 public class Edit implements Printable{
 
 	private int cutNumber;

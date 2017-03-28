@@ -8,6 +8,8 @@ import java.util.Date;
 
 import javax.swing.Timer;
 
+import Archive.ServicePanelInd;
+
 public class ItemHistoryHandler extends ServicePanelInd {
 	/*
 	 * 
