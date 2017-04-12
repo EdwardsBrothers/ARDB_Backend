@@ -10,8 +10,14 @@
 	<classpathentry kind="lib" path="pdfbox-app-2.0.0-RC1.jar"/>
 	<classpathentry kind="lib" path="javax.mail.jar"/>
 	<classpathentry kind="lib" path="jaf-1_1_1.zip"/>
+	<classpathentry kind="lib" path="poi-3.15.jar"/>
+	<classpathentry kind="lib" path="commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="poi-ooxml-3.15.jar"/>
+	<classpathentry kind="lib" path="curvesapi-1.05.jar"/>
+	<classpathentry kind="lib" path="poi-ooxml-schemas-3.15.jar"/>
+	<classpathentry kind="lib" path="xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="stax-api-1.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="poi-bin-3.15-20160924/poi-3.15/poi-ooxml-3.15.jar"/>
-	<classpathentry kind="lib" path="poi-bin-3.15-20160924/poi-3.15/poi-ooxml-schemas-3.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -22,20 +22,19 @@ public class Cut {
 		} else {
 			cutType = "misc";
 		}
-		
 		parseLines();
-		
-		
+
 	}
 	
+
+
 	private void parseLines(){
 			
 		int lineNumber = 0;
 		int stringLength = 0;
 		String line = "";
 		
-		
-			//HEADER
+		//HEADER
 		while(scan.hasNextLine() && lineNumber < 9){
 			line = scan.nextLine();
 			stringLength = line.length();
@@ -109,24 +108,124 @@ public class Cut {
 						s.addDetail(line);
 						line = scan.nextLine();
 					}
+					s.calculations();
 					shades.add(s);
 				}
-				
 			}
-			
-
-			
 		}
-		
-		
 	}
-
+	
 	public boolean isCut() {
 		if(cutType.equals("N")){
 			return false;
 		}
 		return true;
 	}
+	
+	public boolean isShadeCut(){
+		if(cutType.equals("shade")){
+			return true;
+		}
+		return false;
+	}
+
+	public String getCutDate() {
+		return cutDate;
+	}
+
+	public void setCutDate(String cutDate) {
+		this.cutDate = cutDate;
+	}
+
+	public String getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(String customerID) {
+		this.customerID = customerID;
+	}
+
+	public String getPo() {
+		return po;
+	}
+
+	public void setPo(String po) {
+		this.po = po;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getShippingMethod() {
+		return shippingMethod;
+	}
+
+	public void setShippingMethod(String shippingMethod) {
+		this.shippingMethod = shippingMethod;
+	}
+
+	public String getShippingAddTwo() {
+		return shippingAddTwo;
+	}
+
+	public void setShippingAddTwo(String shippingAddTwo) {
+		this.shippingAddTwo = shippingAddTwo;
+	}
+
+	public String getShippingAddThree() {
+		return shippingAddThree;
+	}
+
+	public void setShippingAddThree(String shippingAddThree) {
+		this.shippingAddThree = shippingAddThree;
+	}
+
+	public String getShippingAddFour() {
+		return shippingAddFour;
+	}
+
+	public void setShippingAddFour(String shippingAddFour) {
+		this.shippingAddFour = shippingAddFour;
+	}
+
+	public String getHeaderLine() {
+		return headerLine;
+	}
+
+	public void setHeaderLine(String headerLine) {
+		this.headerLine = headerLine;
+	}
+
+	public String getCutType() {
+		return cutType;
+	}
+
+	public void setCutType(String cutType) {
+		this.cutType = cutType;
+	}
+
+	public int getCutNumber() {
+		return cutNumber;
+	}
+
+	public void setCutNumber(int cutNumber) {
+		this.cutNumber = cutNumber;
+	}
+
+	public ArrayList<Shade> getShades() {
+		return shades;
+	}
+
+	public void setShades(ArrayList<Shade> shades) {
+		this.shades = shades;
+	}
+	
+	
 	
 
 }
