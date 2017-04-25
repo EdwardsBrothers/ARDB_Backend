@@ -10,7 +10,9 @@ public class Shade {
 	private double width, length;
 	private double fabCutOne, fabCutTwo, fabCutThree;
 	private double matTube, matSIB, matTubeSize, matFascia, matDBB;
-	private char matNotch;
+	private String matNotch;
+	private double clutchChainLength, clutchSize;
+	private String clutchColor;
 	private Scanner scan;
 	
 	
@@ -76,175 +78,155 @@ public class Shade {
 		width = Double.parseDouble(widthxlength.substring(0, x));
 		width = Math.floor(width) + ((width % 1) * 5 / 4);
 		length = Double.parseDouble(widthxlength.substring(x+1));
-		length = Math.floor(length) + ((length % 1) *5 / 4);
+		length = Math.floor(length) + ((length % 1) * 5 / 4);
 		
 		if(io.equalsIgnoreCase("I")){
 			if(sideChannel){
-				fabCutOne = length + 18;
-				fabCutTwo = width + 3;
-				fabCutThree = width - 0.125;
-			}else{
 				fabCutOne = length + 18;
 				fabCutTwo = width + 3;
 				fabCutThree = width - 0.75;
+			}else{
+				fabCutOne = length + 18;
+				fabCutTwo = width + 3;
+				fabCutThree = width - 0.125;
 			}
 		}
 		if(io.equalsIgnoreCase("O")){
 			if(sideChannel){
 				fabCutOne = length + 18;
 				fabCutTwo = width + 3;
-				fabCutThree = width;
+				fabCutThree = width - 0.625;
 			}else{
 				fabCutOne = length + 18;
 				fabCutTwo = width + 3;
-				fabCutThree = width - 0.625;
+				fabCutThree = width;
 			}
+		}
+		
+		if(width >= 98){
+			matTubeSize = 45;
+		} else {
+			matTubeSize = 40;
 		}
 		
 		if(io.equalsIgnoreCase("I")){
 			if(hem.equalsIgnoreCase("Y")){
-				if(fasciaHeight.equalsIgnoreCase("3")){ //IB, DBB, 3
+				if(fasciaHeight.equalsIgnoreCase("3.00")){ //IB, DBB, 3
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("3.75")){ //IB, DBB 3.75
+				}else if(fasciaHeight.equalsIgnoreCase("3.75")){ //IB, DBB 3.75
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("4.25")){ //IB, DBB 4.25
+				}else if(fasciaHeight.equalsIgnoreCase("4.25")){ //IB, DBB 4.25
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				else{ //IB, DBB, N
+				}else{ //IB, DBB, N
 					matTube = width - 1.5;
 					matFascia = 0;
-					matNotch = 'N';
+					matNotch = "N";
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
 				}
 						
 			}
 			if(hem.equalsIgnoreCase("N")){
-				if(fasciaHeight.equalsIgnoreCase("3")){ //IB, SIB, 3
+				if(fasciaHeight.equalsIgnoreCase("3.00")){ //IB, SIB, 3
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("3.75")){ //IB, SIB, 3.75
+				}else if(fasciaHeight.equalsIgnoreCase("3.75")){ //IB, SIB, 3.75
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("4.25")){ // IB, SIB, 4.25
+				}else if(fasciaHeight.equalsIgnoreCase("4.25")){ // IB, SIB, 4.25
 					matTube = width - 1.5;
 					matFascia = width - 0.125;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				else{ // IB, SIB, N
+				}else{ // IB, SIB, N
 					matTube = width - 1.5;
 					matFascia = 0;
-					matNotch = 'N';
+					matNotch = "N";
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
 				}
 			}
 		}
 		
 		if(io.equalsIgnoreCase("O")){
 			if(hem.equalsIgnoreCase("Y")){
-				if(fasciaHeight.equalsIgnoreCase("3")){ //OB, DBB, 3
+				if(fasciaHeight.equalsIgnoreCase("3.00")){ //OB, DBB, 3
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("3.75")){ //OB, DBB, 3.75
+				}else if(fasciaHeight.equalsIgnoreCase("3.75")){ //OB, DBB, 3.75
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("4.25")){ //OB, DBB, 4.25
+				}else if(fasciaHeight.equalsIgnoreCase("4.25")){ //OB, DBB, 4.25
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
-				}
-				else{ //OB, DBB, N
+				}else{ //OB, DBB, N
 					matTube = width - 1.375;
 					matFascia = 0;
-					matNotch = 'N';
+					matNotch = "N";
 					matDBB = matTube;
 					matSIB = 0;
-					matTubeSize = 40;
 				}
 						
 			}
 			if(hem.equalsIgnoreCase("N")){
-				if(fasciaHeight.equalsIgnoreCase("3")){ //OB, SIB, 3
+				if(fasciaHeight.equalsIgnoreCase("3.00")){ //OB, SIB, 3
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("3.75")){ //OB, SIB, 3.75
+				}else if(fasciaHeight.equalsIgnoreCase("3.75")){ //OB, SIB, 3.75
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				if(fasciaHeight.equalsIgnoreCase("4.25")){ //OB, SIB, 4.25
+				}else if(fasciaHeight.equalsIgnoreCase("4.25")){ //OB, SIB, 4.25
 					matTube = width - 1.375;
 					matFascia = width;
-					matNotch = control.charAt(0);
+					matNotch = control;
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
-				}
-				else{ //OB, SIB, N
+				}else{ //OB, SIB, N
 					matTube = width - 1.375;
 					matFascia = 0;
-					matNotch = 'N';
+					matNotch = "N";
 					matDBB = 0;
 					matSIB = matTube - 2;
-					matTubeSize = 40;
 				}
 			}
 		}
-
+		
+		clutchChainLength = length - 6;
+		clutchSize = matTubeSize;
 	}
 	
 	
@@ -337,11 +319,11 @@ public class Shade {
 		this.matDBB = matDBB;
 	}
 
-	public char getMatNotch() {
+	public String getMatNotch() {
 		return matNotch;
 	}
 
-	public void setMatNotch(char matNotch) {
+	public void setMatNotch(String matNotch) {
 		this.matNotch = matNotch;
 	}
 
@@ -455,6 +437,30 @@ public class Shade {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public double getClutchChainLength() {
+		return clutchChainLength;
+	}
+
+	public void setClutchChainLength(double clutchChainLength) {
+		this.clutchChainLength = clutchChainLength;
+	}
+
+	public double getClutchSize() {
+		return clutchSize;
+	}
+
+	public void setClutchSize(double clutchSize) {
+		this.clutchSize = clutchSize;
+	}
+
+	public String getClutchColor() {
+		return clutchColor;
+	}
+
+	public void setClutchColor(String clutchColor) {
+		this.clutchColor = clutchColor;
 	}
 		
 }

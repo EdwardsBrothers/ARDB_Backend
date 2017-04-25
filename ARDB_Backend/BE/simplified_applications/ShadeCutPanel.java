@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,11 +18,12 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.PrintSetup;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import be_gui.Cut;
@@ -57,9 +57,10 @@ public class ShadeCutPanel extends JPanel {
 	public ShadeCutPanel() {
 		cpl = new ShadeCutPanelListener();
 		timer = new Timer(3769, cpl);
+		timer.addActionListener(cpl);
 		timer.start();
 		
-		customCutFilePath = "jotfile";     //"Z:\\AAA-P2CSTM";
+		customCutFilePath = "test5";//"Z:\\AAA-P2CSTM";
 		currentCustomCutFile = new File(customCutFilePath);
 		currentCustomCutTimeStamp = currentCustomCutFile.lastModified();
 		
@@ -132,141 +133,225 @@ public class ShadeCutPanel extends JPanel {
 	}
 	
 	private void generateExcel(){
+		ArrayList<File> excelFiles = new ArrayList<File>();
 		
 		for(Cut c: shades){
 			if(c.isShadeCut()){
 				XSSFWorkbook newBook = null;					
 				FileOutputStream fileOut;	
-				int sheets;
 				try{
 					newBook = new XSSFWorkbook();
-					sheets = 1;
 				}
 				catch(java.lang.IllegalArgumentException jli){
 					
 				}
-			
+				
+				XSSFCellStyle hcs = newBook.createCellStyle();
+				XSSFFont hf = newBook.createFont();
+				hf.setFontHeightInPoints((short) 14);
+				hf.setFontName("Calibri");
+				hf.setBold(true);
+				hcs.setFont(hf);
+
+				XSSFCellStyle cs = newBook.createCellStyle();
+				XSSFFont f = newBook.createFont();
+				f.setFontHeightInPoints((short) 12);
+				f.setFontName("Arial");
+				cs.setFont(f);
+				cs.setBorderBottom(CellStyle.BORDER_THIN);
+				cs.setBorderTop(CellStyle.BORDER_THIN);
+				cs.setBorderLeft(CellStyle.BORDER_THIN);
+				cs.setBorderRight(CellStyle.BORDER_THIN);
+				cs.setAlignment(CellStyle.ALIGN_CENTER);
+				
+				XSSFCellStyle ul = (XSSFCellStyle) hcs.clone();
+				ul.setBorderBottom(CellStyle.BORDER_THICK);
+				
+				PrintSetup ps;
+				
 				//Master Sheet Header
 				
 				Sheet newSheet = newBook.createSheet("Main");
 				Row currentRow = newSheet.createRow(1);
-				Cell currentCell = currentRow.createCell(1);
+				Cell currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getCustomerName());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(2);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddTwo());
-				currentCell = currentRow.createCell(6);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(3);
 				currentCell.setCellValue("Cut");
-				currentCell = currentRow.createCell(7);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue(c.getCutNumber());
-			
+				currentCell.setCellStyle(hcs);			
 				currentRow = newSheet.createRow(3);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddThree());
-			
+				currentCell.setCellStyle(hcs);			
 				currentRow = newSheet.createRow(4);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddFour());
-				
+				currentCell.setCellStyle(hcs);
+						
 				currentRow = newSheet.createRow(6);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Notes");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(1);
 				currentCell.setCellValue("Type");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(2);
 				currentCell.setCellValue("Description");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(3);
 				currentCell.setCellValue("Quantity");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue("IO");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(5);
 				currentCell.setCellValue("Width");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(6);
 				currentCell.setCellValue("Length");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(7);
 				currentCell.setCellValue("System");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(8);
 				currentCell.setCellValue("Control");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(9);
 				currentCell.setCellValue("Fabric");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(10);
 				currentCell.setCellValue("Fascia");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(11);
 				currentCell.setCellValue("Fascia Height");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(12);
 				currentCell.setCellValue("Fascia Color");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(13);
 				currentCell.setCellValue("Hem");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(14);
 				currentCell.setCellValue("Hem Color");
-				currentCell = currentRow.createCell(15);
-				currentCell.setCellValue("Comments");
+				currentCell.setCellStyle(cs);
 				
 				//Master Sheet Body
 				
 				int rowNumber = 7;
+				int qtyTotal = 0;
 				for(Shade s: c.getShades()){
 					currentRow = newSheet.createRow(rowNumber);
 					
+					currentCell = currentRow.createCell(0);
+					currentCell.setCellValue(s.getComments());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(1);
 					currentCell.setCellValue(s.getType());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(2);
 					currentCell.setCellValue(s.getDescription());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(3);
 					currentCell.setCellValue(s.getQuantity());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(4);
 					currentCell.setCellValue(s.getIo());
-					String wxl = s.getWidthxlength();
-					int index = wxl.indexOf("X");
-					String w = wxl.substring(0, index).trim();
-					String l = wxl.substring(index+1).trim();
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(5);
-					currentCell.setCellValue(w);
+					currentCell.setCellValue(mdc(s.getWidth()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(6);
-					currentCell.setCellValue(l);
+					currentCell.setCellValue(mdc(s.getLength()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(7);
 					currentCell.setCellValue(s.getSystem());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(8);
 					currentCell.setCellValue(s.getControl());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(9);
 					currentCell.setCellValue(s.getFabric());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(10);
 					currentCell.setCellValue(s.getFascia());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(11);
 					currentCell.setCellValue(s.getFasciaHeight());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(12);
 					currentCell.setCellValue(s.getFasciaColor());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(13);
 					currentCell.setCellValue(s.getHem());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(14);
 					currentCell.setCellValue(s.getHemColor());
-					currentCell = currentRow.createCell(15);
-					currentCell.setCellValue(s.getComments());
+					currentCell.setCellStyle(cs);
 					
 					rowNumber++;
+					qtyTotal = qtyTotal + s.getQuantity();
 				}
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellValue("Total");
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellValue(qtyTotal);
+				currentCell.setCellStyle(hcs);
+				
+				newSheet.autoSizeColumn(0);
+				newSheet.autoSizeColumn(1);
+				newSheet.autoSizeColumn(2);
+				newSheet.autoSizeColumn(3);
+				newSheet.autoSizeColumn(4);
+				newSheet.autoSizeColumn(5);
+				newSheet.autoSizeColumn(6);
+				newSheet.autoSizeColumn(7);
+				newSheet.autoSizeColumn(8);
+				newSheet.autoSizeColumn(9);
+				newSheet.autoSizeColumn(10);
+				newSheet.autoSizeColumn(11);
+				newSheet.autoSizeColumn(12);
+				newSheet.autoSizeColumn(13);
+				newSheet.autoSizeColumn(14);
+				
+				ps = newSheet.getPrintSetup();
+				newSheet.setAutobreaks(true);
+				ps.setFitWidth((short) 1);
+				ps.setLandscape(true);
 				
 				// Fabric Cut Sheet Header
 				
 				newSheet = newBook.createSheet("Fabric Cut Sheet");
 				currentRow = newSheet.createRow(1);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getCustomerName());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(2);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddTwo());
-				currentCell = currentRow.createCell(6);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(3);
 				currentCell.setCellValue("Cut");
-				currentCell = currentRow.createCell(7);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue(c.getCutNumber());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(3);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddThree());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(4);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddFour());
+				currentCell.setCellStyle(hcs);
 				
 				// Fabric Cut Sheet Body
 				// Header
@@ -274,90 +359,397 @@ public class ShadeCutPanel extends JPanel {
 				currentRow = newSheet.createRow(rowNumber);
 				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue("1st Cut");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(5);
 				currentCell.setCellValue("Trim (2nd Cut)");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(6);
 				currentCell.setCellValue("3rd Cut");
+				currentCell.setCellStyle(cs);
 				
 				rowNumber++;
 				currentRow = newSheet.createRow(rowNumber);
 				currentCell = currentRow.createCell(0);
-				currentCell.setCellValue("Window");
+				currentCell.setCellValue("Notes");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(1);
 				currentCell.setCellValue("Qty");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(2);
 				currentCell.setCellValue("Width");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(3);
 				currentCell.setCellValue("Length");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue("Shade Length");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(5);
 				currentCell.setCellValue("Shade Width");
+				currentCell.setCellStyle(cs);
 				currentCell = currentRow.createCell(6);
 				currentCell.setCellValue("Shade Width");
-				currentCell = currentRow.createCell(7);
-				currentCell.setCellValue("Notes");
+				currentCell.setCellStyle(cs);
 				
 				// Body
 				rowNumber++;
-				int windowNumber = 1;
 				for(Shade s: c.getShades()){
 					currentRow = newSheet.createRow(rowNumber);
 					currentCell = currentRow.createCell(0);
-					currentCell.setCellValue(c.getCutNumber() + " -" + windowNumber);
+					currentCell.setCellValue(s.getComments());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(1);
 					currentCell.setCellValue(s.getQuantity());
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(2);
-					currentCell.setCellValue(s.getWidth());
+					currentCell.setCellValue(mdc(s.getWidth()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(3);
-					currentCell.setCellValue(s.getLength());
+					currentCell.setCellValue(mdc(s.getLength()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(4);
-					currentCell.setCellValue(s.getFabCutOne());
+					currentCell.setCellValue(mdc(s.getFabCutOne()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(5);
-					currentCell.setCellValue(s.getFabCutTwo());
+					currentCell.setCellValue(mdc(s.getFabCutTwo()));
+					currentCell.setCellStyle(cs);
 					currentCell = currentRow.createCell(6);
-					currentCell.setCellValue(s.getFabCutThree());
-					currentCell = currentRow.createCell(7);
-					currentCell.setCellValue(s.getComments());
-					windowNumber++;
+					currentCell.setCellValue(mdc(s.getFabCutThree()));
+					currentCell.setCellStyle(cs);
+
 					rowNumber++;					
 				}
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Total");
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue(qtyTotal);
+				currentCell.setCellStyle(hcs);
+				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Cut By:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(5);
+				currentCell.setCellStyle(ul);
+				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Cut Date:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(5);
+				currentCell.setCellStyle(ul);
+				
+				newSheet.autoSizeColumn(0);
+				newSheet.autoSizeColumn(1);
+				newSheet.autoSizeColumn(2);
+				newSheet.autoSizeColumn(3);
+				newSheet.autoSizeColumn(4);
+				newSheet.autoSizeColumn(5);
+				newSheet.autoSizeColumn(6);
+				
+				ps = newSheet.getPrintSetup();
+				newSheet.setAutobreaks(true);
+				ps.setFitWidth((short) 1);
+				ps.setLandscape(true);
 				
 				//Material Cut Sheet
 				newSheet = newBook.createSheet("Material Cut Sheet");
 				currentRow = newSheet.createRow(1);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getCustomerName());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(2);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddTwo());
-				currentCell = currentRow.createCell(6);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(3);
 				currentCell.setCellValue("Cut");
-				currentCell = currentRow.createCell(7);
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(4);
 				currentCell.setCellValue(c.getCutNumber());
-			
+				currentCell.setCellStyle(hcs);
 				currentRow = newSheet.createRow(3);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddThree());
-			
+				currentCell.setCellStyle(hcs);			
 				currentRow = newSheet.createRow(4);
-				currentCell = currentRow.createCell(1);
+				currentCell = currentRow.createCell(0);
 				currentCell.setCellValue(c.getShippingAddFour());
+				currentCell.setCellStyle(hcs);
 				
 				rowNumber = 6;
-				int colNumber = 0;
 				
 				currentRow = newSheet.createRow(rowNumber);
-				currentCell = currentRow.createCell(colNumber);
-				currentCell.setCellValue("Window");
-				colNumber++;
-				currentCell = currentRow.createCell(colNumber);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Notes");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(1);
 				currentCell.setCellValue("Qty");
-				colNumber++;
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellValue("Shade Width");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellValue("Tube Size");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellValue("Tube Cut Width");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(5);
+				currentCell.setCellValue("Fascia Size");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(6);
+				currentCell.setCellValue("Fascia Color");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(7);
+				currentCell.setCellValue("Fascia Cut Width");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(8);
+				currentCell.setCellValue("Notch");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(9);
+				currentCell.setCellValue("SIB/DBB");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(10);
+				currentCell.setCellValue("Hem Color");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(11);
+				currentCell.setCellValue("Bar Cut Width");
+				currentCell.setCellStyle(cs);
+
+				rowNumber++;
+				
+				for(Shade s : c.getShades()){
+					currentRow = newSheet.createRow(rowNumber);
+					currentCell = currentRow.createCell(0);
+					currentCell.setCellValue(s.getComments());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(1);
+					currentCell.setCellValue(s.getQuantity());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(2);
+					currentCell.setCellValue(mdc(s.getWidth()));
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(3);
+					currentCell.setCellValue(s.getMatTubeSize());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(4);
+					currentCell.setCellValue(mdc(s.getMatTube()));
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(5);
+					currentCell.setCellValue(s.getFasciaHeight());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(6);
+					currentCell.setCellValue(s.getFasciaColor());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(7);
+					currentCell.setCellValue(mdc(s.getMatFascia()));
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(8);
+					currentCell.setCellValue(s.getMatNotch());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(9);
+					if(s.getMatDBB() == 0){
+						currentCell.setCellValue("SIB");
+						currentCell.setCellStyle(cs);
+						currentCell = currentRow.createCell(11);
+						currentCell.setCellValue(mdc(s.getMatSIB()));
+						currentCell.setCellStyle(cs);
+					}
+					if(s.getMatSIB() == 0){
+						currentCell.setCellValue("DBB");
+						currentCell.setCellStyle(cs);
+						currentCell = currentRow.createCell(11);
+						currentCell.setCellValue(mdc(s.getMatDBB()));
+						currentCell.setCellStyle(cs);
+					}
+					currentCell = currentRow.createCell(10);
+					currentCell.setCellValue(s.getHemColor());
+					currentCell.setCellStyle(cs);
+					
+					rowNumber++;
+				}
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Total");
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue(qtyTotal);
+				currentCell.setCellStyle(hcs);
+				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Cut By:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(5);
+				currentCell.setCellStyle(ul);
+				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Cut Date:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(5);
+				currentCell.setCellStyle(ul);
+				
+				newSheet.autoSizeColumn(0);
+				newSheet.autoSizeColumn(1);
+				newSheet.autoSizeColumn(2);
+				newSheet.autoSizeColumn(3);
+				newSheet.autoSizeColumn(4);
+				newSheet.autoSizeColumn(5);
+				newSheet.autoSizeColumn(6);
+				newSheet.autoSizeColumn(7);
+				newSheet.autoSizeColumn(8);
+				newSheet.autoSizeColumn(9);
+				newSheet.autoSizeColumn(10);
+				newSheet.autoSizeColumn(11);
+				
+				ps = newSheet.getPrintSetup();
+				newSheet.setAutobreaks(true);
+				ps.setFitWidth((short) 1);
+				ps.setLandscape(true);
+				
+				//Clutch Cut Sheet
+				
+				newSheet = newBook.createSheet("Clutch Cut Sheet");
+				currentRow = newSheet.createRow(1);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue(c.getCustomerName());
+				currentCell.setCellStyle(hcs);
+				currentRow = newSheet.createRow(2);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue(c.getShippingAddTwo());
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellValue("Cut");
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellValue(c.getCutNumber());
+				currentCell.setCellStyle(hcs);
+				currentRow = newSheet.createRow(3);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue(c.getShippingAddThree());
+				currentCell.setCellStyle(hcs);
+				currentRow = newSheet.createRow(4);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue(c.getShippingAddFour());
+				currentCell.setCellStyle(hcs);
+				
+				rowNumber = 6;
+				
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Notes");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Qty");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellValue("Chain Length");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellValue("Clutch Size");
+				currentCell.setCellStyle(cs);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellValue("Control");
+				currentCell.setCellStyle(cs);
+				
+				rowNumber++;
+							
+				for(Shade s: c.getShades()){
+					currentRow = newSheet.createRow(rowNumber);
+					currentCell = currentRow.createCell(0);
+					currentCell.setCellValue(s.getComments());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(1);
+					currentCell.setCellValue(s.getQuantity());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(2);
+					currentCell.setCellValue(s.getClutchChainLength());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(3);
+					currentCell.setCellValue(s.getClutchSize());
+					currentCell.setCellStyle(cs);
+					currentCell = currentRow.createCell(4);
+					currentCell.setCellValue(s.getControl());
+					currentCell.setCellStyle(cs);
+
+					rowNumber++;
+				}
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(0);
+				currentCell.setCellValue("Total");
+				currentCell.setCellStyle(hcs);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue(qtyTotal);
+				currentCell.setCellStyle(hcs);
 				
 				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Assembled By:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
 				
+				rowNumber++; rowNumber++;
+				currentRow = newSheet.createRow(rowNumber);
+				currentCell = currentRow.createCell(1);
+				currentCell.setCellValue("Assembled Date:");
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(2);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(3);
+				currentCell.setCellStyle(ul);
+				currentCell = currentRow.createCell(4);
+				currentCell.setCellStyle(ul);
+
+				
+				newSheet.autoSizeColumn(0);
+				newSheet.autoSizeColumn(1);
+				newSheet.autoSizeColumn(2);
+				newSheet.autoSizeColumn(3);
+				newSheet.autoSizeColumn(4);
+				
+				ps = newSheet.getPrintSetup();
+				newSheet.setAutobreaks(true);
+				ps.setFitWidth((short) 1);
+				ps.setLandscape(true);
 
 				try{
 					fileOut = new FileOutputStream("Cut Excel Sheets/" + c.getCutNumber() + ".xlsx");
@@ -366,10 +758,23 @@ public class ShadeCutPanel extends JPanel {
 				} catch(Exception e){
 					e.printStackTrace();
 				}
+				
+				cutSender.sendEmailWithAttachment("jedwards@mariettadrapery.com", "Shade Cut " + c.getCutNumber(), "Test Body", "Cut Excel Sheets/" + c.getCutNumber() + 
+						".xlsx", "Cut " + c.getCutNumber() + ".xlsx");
+				//cutSender.sendEmailWithAttachment("msolomon@mariettadrapery.com", "Shade Cut " + c.getCutNumber(), "Test Body", "Cut Excel Sheets/" + c.getCutNumber() + 
+				//		".xlsx", "Cut " + c.getCutNumber() + ".xlsx");
+				//cutSender.sendEmailWithAttachment("jtregoning@mariettadrapery.com", "Shade Cut " + c.getCutNumber(), "Test Body", "Cut Excel Sheets/" + c.getCutNumber() + 
+				//		".xlsx", "Cut " + c.getCutNumber() + ".xlsx");
 			}
 		}
-	}
 		
+	}
+	
+	public double mdc(double in){
+		double rem = in % 1;
+		return Math.floor(in) + (rem * 0.8);
+	}
+	
 		
 	private class ShadeCutPanelListener implements ActionListener {
 
@@ -378,7 +783,29 @@ public class ShadeCutPanel extends JPanel {
 			if(e.getSource().equals(btnPinger)){
 			parseCuts(currentCustomCutFile);
 			}
+			if(e.getSource().equals(timer)){
+				if(checkUpdate()){
+					parseCuts(currentCustomCutFile);
+				}
+			}
 			
+		}
+
+		private boolean checkUpdate() {
+			tempCustomCutFile = new File(customCutFilePath);
+			tempCustomCutTimeStamp = tempCustomCutFile.lastModified();
+			if(tempCustomCutTimeStamp != currentCustomCutTimeStamp){
+				currentCustomCutFile = tempCustomCutFile;
+				currentCustomCutTimeStamp = tempCustomCutTimeStamp;
+				updateTime();
+				return true;
+			}
+			return false;
+		}
+
+		private void updateTime() {
+			Date currentTime = new Date();
+			lblCustomCutTime.setText(sdf.format(currentTime));
 		}
 		
 	}

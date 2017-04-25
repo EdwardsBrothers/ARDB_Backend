@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Cut {
 	
 	private String cutDate, customerID, po, customerName, shippingMethod, shippingAddTwo, 
-		shippingAddThree, shippingAddFour, headerLine, cutType;
+		shippingAddThree, shippingAddFour, headerLine, cutType, notes;
 	private int cutNumber;
 	private Scanner scan;
 	private ArrayList<Shade> shades;
@@ -38,17 +38,25 @@ public class Cut {
 		while(scan.hasNextLine() && lineNumber < 9){
 			line = scan.nextLine();
 			stringLength = line.length();
+			if(line.contains("* WEST *")){
+				line = scan.nextLine();
+				stringLength = line.length();
+			}
+			
 			switch(lineNumber){
 			
 			case 2:
 				//date, customerid, po	
-				if(stringLength < 44){
+				if(stringLength < 26){
 					cutType = "N";
 					break;
 				}
 				cutDate = line.substring(0, 12).trim();
-				customerID = line.substring(26, 34).trim();
-				po = line.substring(44).trim();
+				customerID = line.substring(26, 32).trim();
+				if(stringLength > 43){
+					po = line.substring(44).trim();
+				}
+
 				
 				break;
 			
@@ -96,17 +104,24 @@ public class Cut {
 		
 		if(cutType.equals("shade")){
 			lineNumber = 0;
+			boolean running = true;
 			String shadeHeader = " TYP    DESCRIPTION  QTY  IO  WDTH X LGTH  SYSTM CNTRL FABRI FASICA F-HGT F-CLR HEM H-CLR";
 			scan.nextLine();
 			line = scan.nextLine();
-			while(scan.hasNextLine()){
+			while(scan.hasNextLine() && running){
 				if(line.equals(shadeHeader)){
 					line = scan.nextLine();
+				}
+				if(line.contains("SOLAR")){
 					Shade s = new Shade(line);
 					line = scan.nextLine();
-					while(!line.equals(shadeHeader) && scan.hasNextLine()){
-						s.addDetail(line);
-						line = scan.nextLine();
+					while(!line.contains("SOLAR") && scan.hasNextLine() && running){
+						if(line.equals("")){
+							running = false;					
+						} else{
+							s.addDetail(line.trim());
+							line = scan.nextLine();
+						} //Fix stuff
 					}
 					s.calculations();
 					shades.add(s);
